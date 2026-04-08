@@ -112,36 +112,36 @@ const Hero = () => {
                 <div className="space-y-3 sm:space-y-4">
                   {/* Pickup Row - Date and Time side by side */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                    <div className="group flex items-stretch bg-white border-b-2 border-white/30 focus-within:border-yellow-500 transition-all">
+                    <div className="group flex items-stretch bg-white border-white/30 focus-within:border-yellow-500 transition-all h-[52px]">
                       <div className="bg-yellow-600 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
                         <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-gray-900" />
                       </div>
-                      <div className="flex-1 flex flex-col">
+                      <div className="flex-1 flex flex-col justify-between">
                         <label className="block text-xs font-medium text-gray-600 px-2 pt-1 pb-0">
                           Pickup Date
                         </label>
                         <input
                           type="date"
                           defaultValue={today}
-                          className="bg-white flex-1 outline-none text-gray-900 text-sm sm:text-base px-2 pb-1.5 pt-0 min-w-0 appearance-none [&::-webkit-calendar-picker-indicator]:hidden"
+                          className="bg-white w-full h-full outline-none text-gray-900 text-sm sm:text-base px-2 py-1 min-w-0 appearance-none [&::-webkit-calendar-picker-indicator]:hidden"
                         />
                       </div>
                     </div>
 
                     <div
-                      className="group flex items-stretch bg-white border-b-2 border-white/30 focus-within:border-yellow-500 
+                      className="group flex items-stretch bg-white border-white/30 focus-within:border-yellow-500 
                     transition-all mb-4 sm:mb-0"
                     >
                       <div className="bg-yellow-600 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
                         <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-gray-900" />
                       </div>
-                      <div className="flex-1 flex flex-col">
+                      <div className="flex-1 flex flex-col justify-between">
                         <label className="block text-xs font-medium text-gray-600 px-2 pt-1 pb-0">
                           Pickup Time
                         </label>
                         <input
                           type="time"
-                          className="bg-white flex-1 outline-none text-gray-900 text-sm sm:text-base px-2 pb-1.5 pt-0 min-w-0 appearance-none [&::-webkit-calendar-picker-indicator]:hidden"
+                          className="bg-white w-full h-full outline-none text-gray-900 text-sm sm:text-base px-2 py-1 min-w-0 appearance-none [&::-webkit-calendar-picker-indicator]:hidden"
                         />
                       </div>
                     </div>
@@ -149,67 +149,67 @@ const Hero = () => {
 
                   {/* Return Row - Date and Time side by side */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                    <div className="group flex items-stretch bg-white border-b-2 border-white/30 focus-within:border-yellow-500 transition-all">
+                    <div className="group flex items-stretch bg-white border-white/30 focus-within:border-yellow-500 transition-all">
                       <div className="bg-yellow-600 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
                         <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-gray-900" />
                       </div>
-                      <div className="flex-1 flex flex-col">
+                      <div className="flex-1 flex flex-col justify-between">
                         <label className="block text-xs font-medium text-gray-600 px-2 pt-1 pb-0">
                           Return Date
                         </label>
                         <input
                           type="date"
                           defaultValue={today}
-                          className="bg-white flex-1 outline-none text-gray-900 text-sm sm:text-base px-2 pb-1.5 pt-0 min-w-0 appearance-none [&::-webkit-calendar-picker-indicator]:hidden"
+                          className="bg-white w-full h-full outline-none text-gray-900 text-sm sm:text-base px-2 py-1 min-w-0 appearance-none [&::-webkit-calendar-picker-indicator]:hidden"
                         />
                       </div>
                     </div>
 
                     <div
-                      className="group flex items-stretch bg-white border-b-2 border-white/30 focus-within:border-yellow-500 
+                      className="group flex items-stretch bg-white border-white/30 focus-within:border-yellow-500 
                     transition-all mb-4 sm:mb-0"
                     >
                       <div className="bg-yellow-600 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
                         <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-gray-900" />
                       </div>
-                      <div className="flex-1 flex flex-col">
+                      <div className="flex-1 flex flex-col justify-between">
                         <label className="block text-xs font-medium text-gray-600 px-2 pt-1 pb-0">
                           Return Time
                         </label>
                         <input
                           type="time"
-                          className="bg-white flex-1 outline-none text-gray-900 text-sm sm:text-base px-2 pb-1.5 pt-0 min-w-0 appearance-none [&::-webkit-calendar-picker-indicator]:hidden"
+                          className="bg-white w-full h-full outline-none text-gray-900 text-sm sm:text-base px-2 py-1 min-w-0 appearance-none [&::-webkit-calendar-picker-indicator]:hidden"
                         />
                       </div>
                     </div>
                   </div>
 
                   {/* Location Data - below the date/time rows */}
-                  <div className="group flex items-stretch bg-white border-b-2 border-white/30 focus-within:border-yellow-500 transition-all">
+                  <div className="group flex items-stretch bg-white border-white/30 focus-within:border-yellow-500 transition-all">
                     <div className="bg-yellow-600 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
                       <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-gray-900" />
                     </div>
-                    <div className="flex-1 flex flex-col">
+                    <div className="flex-1 flex flex-col justify-between">
                       <label className="block text-xs font-medium text-gray-600 px-2 pt-1 pb-0">
                         Pickup Location
                       </label>
                       <input
                         type="text"
                         placeholder="Enter pickup location"
-                        className="bg-white w-full outline-none placeholder:text-gray-400 text-gray-900 text-sm sm:text-base px-2 pb-1.5 pt-0 min-w-0 h-full"
+                        className="bg-white w-full h-full outline-none placeholder:text-gray-400 text-gray-900 text-sm sm:text-base px-2 py-1 min-w-0 h-full"
                       />
                     </div>
                   </div>
 
-                  <div className="group flex items-stretch bg-white border-b-2 border-white/30 focus-within:border-yellow-500 transition-all">
+                  <div className="group flex items-stretch bg-white border-white/30 focus-within:border-yellow-500 transition-all">
                     <div className="bg-yellow-600 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
                       <CarIcon className="h-4 w-4 sm:h-5 sm:w-5 text-gray-900" />
                     </div>
-                    <div className="flex-1 flex flex-col">
+                    <div className="flex-1 flex flex-col justify-between">
                       <label className="block text-xs font-medium text-gray-600 px-2 pt-1 pb-0">
                         Car Type
                       </label>
-                      <select className="bg-white w-full outline-none text-gray-900 text-sm sm:text-base px-2 pb-1.5 pt-0 min-w-0 h-full">
+                      <select className="bg-white w-full outline-none text-gray-900 text-sm sm:text-base px-2 py-1 min-w-0 h-full">
                         <option className="bg-white text-gray-900">
                           Select Car Type
                         </option>
