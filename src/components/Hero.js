@@ -72,7 +72,7 @@ const Hero = () => {
             <div className="max-w-xl animate-fade-in-left">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 Drive Your Dreams with{" "}
-                <span className="text-yellow-400">Premium Cars</span>
+                <span className="text-yellow-600">Premium Cars</span>
               </h1>
               <p className="text-base md:text-lg lg:text-xl text-gray-200 mb-8">
                 Choose from our extensive fleet of luxury, economy, and SUV
@@ -82,22 +82,22 @@ const Hero = () => {
               {/* Quick Stats */}
               <div className="flex gap-6 mb-8">
                 <div>
-                  <div className="text-2xl font-bold text-yellow-400">500+</div>
+                  <div className="text-2xl font-bold text-yellow-600">500+</div>
                   <div className="text-sm text-gray-200">Happy Customers</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-yellow-400">50+</div>
+                  <div className="text-2xl font-bold text-yellow-600">50+</div>
                   <div className="text-sm text-gray-200">Luxury Cars</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-yellow-400">24/7</div>
+                  <div className="text-2xl font-bold text-yellow-600">24/7</div>
                   <div className="text-sm text-gray-200">Support</div>
                 </div>
               </div>
 
               <Link
                 href="/cars"
-                className="inline-flex items-center gap-2 bg-yellow-500 text-gray-900 px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold hover:bg-yellow-400 transition-all transform hover:scale-105 shadow-lg"
+                className="inline-flex items-center gap-2 bg-yellow-600 text-gray-900 px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold hover:bg-yellow-600 transition-all transform hover:scale-105 shadow-lg"
               >
                 View Our Fleet
                 <ArrowRight className="h-5 w-5" />
@@ -113,7 +113,7 @@ const Hero = () => {
                   {/* Pickup Row - Date and Time side by side */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     <div className="group flex items-stretch bg-white border-b-2 border-white/30 focus-within:border-yellow-500 transition-all">
-                      <div className="bg-yellow-400 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
+                      <div className="bg-yellow-600 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
                         <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-gray-900" />
                       </div>
                       <div className="flex-1 flex flex-col">
@@ -132,7 +132,7 @@ const Hero = () => {
                       className="group flex items-stretch bg-white border-b-2 border-white/30 focus-within:border-yellow-500 
                     transition-all mb-4 sm:mb-0"
                     >
-                      <div className="bg-yellow-400 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
+                      <div className="bg-yellow-600 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
                         <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-gray-900" />
                       </div>
                       <div className="flex-1 flex flex-col">
@@ -150,7 +150,7 @@ const Hero = () => {
                   {/* Return Row - Date and Time side by side */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     <div className="group flex items-stretch bg-white border-b-2 border-white/30 focus-within:border-yellow-500 transition-all">
-                      <div className="bg-yellow-400 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
+                      <div className="bg-yellow-600 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
                         <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-gray-900" />
                       </div>
                       <div className="flex-1 flex flex-col">
@@ -169,7 +169,7 @@ const Hero = () => {
                       className="group flex items-stretch bg-white border-b-2 border-white/30 focus-within:border-yellow-500 
                     transition-all mb-4 sm:mb-0"
                     >
-                      <div className="bg-yellow-400 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
+                      <div className="bg-yellow-600 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
                         <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-gray-900" />
                       </div>
                       <div className="flex-1 flex flex-col">
@@ -186,7 +186,7 @@ const Hero = () => {
 
                   {/* Location Data - below the date/time rows */}
                   <div className="group flex items-stretch bg-white border-b-2 border-white/30 focus-within:border-yellow-500 transition-all">
-                    <div className="bg-yellow-400 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
+                    <div className="bg-yellow-600 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
                       <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-gray-900" />
                     </div>
                     <div className="flex-1 flex flex-col">
@@ -202,7 +202,7 @@ const Hero = () => {
                   </div>
 
                   <div className="group flex items-stretch bg-white border-b-2 border-white/30 focus-within:border-yellow-500 transition-all">
-                    <div className="bg-yellow-400 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
+                    <div className="bg-yellow-600 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
                       <CarIcon className="h-4 w-4 sm:h-5 sm:w-5 text-gray-900" />
                     </div>
                     <div className="flex-1 flex flex-col">
@@ -226,7 +226,7 @@ const Hero = () => {
                     </div>
                   </div>
 
-                  <button className="w-1/2 mx-auto block bg-yellow-500 text-gray-900 py-2 sm:py-2.5 rounded font-semibold hover:bg-yellow-400 transition-all transform hover:scale-[1.02] shadow-lg mt-3 sm:mt-4 text-sm sm:text-base">
+                  <button className="w-1/2 mx-auto block bg-yellow-600 text-gray-900 py-2 sm:py-2.5 rounded font-semibold hover:bg-yellow-600 transition-all transform hover:scale-[1.02] shadow-lg mt-3 sm:mt-4 text-sm sm:text-base">
                     RESERVE YOUR JOURNEY
                   </button>
                 </div>
