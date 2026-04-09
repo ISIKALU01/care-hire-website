@@ -11,7 +11,9 @@ import {
   Wifi,
   Fuel,
   Snowflake,
+  ArrowRight,
 } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   const features = [
@@ -75,24 +77,124 @@ export default function Home() {
     <>
       <Hero />
 
-      <div className="w-full bg-black text-white px-4 sm:px-6 lg:px-12 py-6 sm:py-8 lg:py-10">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 lg:gap-10">
+      {/*  */}
+      <div className="w-full bg-black/90 text-white px-10 sm:px-20 lg:px-20 py-15 sm:py-18 lg:py-36">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start justify-between gap-6 lg:gap-12 mb-40">
           {/* Left Side - Heading */}
-          <h2 className="w-full lg:w-1/2 text-lg sm:text-xl lg:text-2xl font-semibold leading-snug">
-            THE LUX AUTO — Reliable Car Hire in Lagos for Business, Airport &
-            Events
+          <h2 className="text-yellow-500 w-full lg:w-1/2 text-lg sm:text-xl lg:text-2xl font-semibold leading-snug">
+            RACMAR SOLUTIONS — Reliable Car Hire in Ibadan and Lagos for
+            Business, Airport & Events
           </h2>
 
           {/* Right Side - Paragraph */}
           <p className="w-full lg:w-1/2 text-sm sm:text-base text-gray-300 leading-relaxed">
-            Looking for reliable car hire in Lagos? TheLuxAuto provides
-            professional chauffeur-driven car hire services across Lagos
+            Looking for reliable car hire in Ibadan? RACMAR SOLUTIONS provides
+            professional chauffeur-driven car hire services across Ibadan
+            including Bodija, Idishin, Eleyele and other areas, also Lagos
             including Victoria Island, Lekki, Ikeja, and Ikoyi, offering both
             affordable and luxury vehicles for airport transfers, business
             travel, and special events. Our 24/7 availability and commitment to
             reliability make us a trusted choice for residents, executives, and
             visitors.
           </p>
+        </div>
+
+        {/* Car Images Section */}
+        <div className="w-full sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            {/* Swipe Indicator (Mobile Only) */}
+            <div className="flex items-center justify-center mb-4 lg:hidden">
+              <div className="flex items-center gap-2 text-gray-400 text-xs animate-pulse">
+                <span>Swipe</span>
+                <div className="w-6 h-[2px] bg-gray-400 relative overflow-hidden">
+                  <span className="absolute left-0 top-0 h-full w-2 bg-yellow-500 animate-[slide_1.2s_infinite]" />
+                </div>
+              </div>
+            </div>
+
+            {/* Cards */}
+            <div className="flex gap-4 overflow-x-auto no-scrollbar snap-x snap-mandatory lg:grid lg:grid-cols-3 lg:overflow-visible">
+              {/* Card 1 */}
+              <div className="relative min-w-[85%] sm:min-w-[60%] lg:min-w-0 h-64 sm:h-72 lg:h-80 overflow-hidden group snap-start">
+                <Image
+                  src="/images/carsite5.jpg"
+                  alt="Toyota Camry"
+                  fill
+                  sizes="(max-width: 640px) 85vw, (max-width: 1024px) 60vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition duration-500 ease-in-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute bottom-0 p-4 w-full">
+                  <h3 className="text-white text-lg font-semibold">
+                    Toyota Camry
+                  </h3>
+                  <p className="text-gray-300 text-sm">
+                    Comfortable city rides
+                  </p>
+                  <p className="text-yellow-400 font-bold text-sm mt-1">
+                    ₦45,000/day
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 2 */}
+              <div className="relative min-w-[85%] sm:min-w-[60%] lg:min-w-0 h-64 sm:h-72 lg:h-80 overflow-hidden group snap-start">
+                <Image
+                  src="/images/carsite6.jpg"
+                  alt="Lexus RX 350"
+                  fill
+                  sizes="(max-width: 640px) 85vw, (max-width: 1024px) 60vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition duration-500 ease-in-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute bottom-0 p-4 w-full">
+                  <h3 className="text-white text-lg font-semibold">
+                    Lexus RX 350
+                  </h3>
+                  <p className="text-gray-300 text-sm">
+                    Luxury & executive travel
+                  </p>
+                  <p className="text-yellow-400 font-bold text-sm mt-1">
+                    ₦85,000/day
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 3 */}
+              <div className="relative min-w-[85%] sm:min-w-[60%] lg:min-w-0 h-64 sm:h-72 lg:h-80 overflow-hidden group snap-start">
+                <Image
+                  src="/images/carsite3.jpg"
+                  alt="Toyota Hiace"
+                  fill
+                  sizes="(max-width: 640px) 85vw, (max-width: 1024px) 60vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition duration-500 ease-in-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute bottom-0 p-4 w-full">
+                  <h3 className="text-white text-lg font-semibold">
+                    Toyota Hiace
+                  </h3>
+                  <p className="text-gray-300 text-sm">
+                    Group & event transport
+                  </p>
+                  <p className="text-yellow-400 font-bold text-sm mt-1">
+                    ₦120,000/day
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA Button */}
+            <div className="flex justify-center mt-8">
+              <Link
+                href="/cars"
+                className="inline-flex items-center gap-2 bg-yellow-600 text-gray-900 px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold hover:bg-yellow-500 transition-all transform hover:scale-105 shadow-lg"
+              >
+                View Our Fleet
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -120,61 +222,6 @@ export default function Home() {
                 <p className="text-gray-600">{feature.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Popular Cars Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Popular Vehicles
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Choose from our wide selection of well-maintained vehicles
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {popularCars.map((car, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition"
-              >
-                <img
-                  src={car.image}
-                  alt={car.name}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-4">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-lg font-semibold">{car.name}</h3>
-                    <span className="text-sm bg-blue-100 text-blue-600 px-2 py-1 rounded">
-                      {car.type}
-                    </span>
-                  </div>
-                  <p className="text-2xl font-bold text-blue-600 mb-3">
-                    {car.price}
-                  </p>
-                  <Link
-                    href="/booking"
-                    className="block text-center bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-800 transition"
-                  >
-                    Rent Now
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-10">
-            <Link
-              href="/cars"
-              className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
-            >
-              View All Cars
-            </Link>
           </div>
         </div>
       </section>
