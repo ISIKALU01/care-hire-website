@@ -16,23 +16,19 @@ const Hero = () => {
   const slides = [
     {
       id: 1,
-      image:
-        "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=2000&q=80",
+      image: "/images/hero1.jpg",
     },
     {
       id: 2,
-      image:
-        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=2000&q=80",
+      image: "/images/hero2.jpg",
     },
     {
       id: 3,
-      image:
-        "https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=2000&q=80",
+      image: "/images/hero3.jpg",
     },
     {
       id: 4,
-      image:
-        "https://images.unsplash.com/photo-1570125909232-263263f1db5a?auto=format&fit=crop&w=2000&q=80",
+      image: "/images/hero4.jpg",
     },
   ];
 
