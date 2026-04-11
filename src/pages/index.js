@@ -14,55 +14,29 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const features = [
     {
-      icon: <Shield className="h-8 w-8 text-blue-600" />,
+      icon: <Shield className="h-8 w-8 text-yellow-600" />,
       title: "Insurance Included",
       description: "Full coverage insurance with every rental",
     },
     {
-      icon: <HeadphonesIcon className="h-8 w-8 text-blue-600" />,
+      icon: <HeadphonesIcon className="h-8 w-8 text-yellow-600" />,
       title: "24/7 Support",
       description: "Round-the-clock customer assistance",
     },
     {
-      icon: <Clock className="h-8 w-8 text-blue-600" />,
+      icon: <Clock className="h-8 w-8 text-yellow-600" />,
       title: "Flexible Returns",
       description: "Return at any of our locations",
     },
     {
-      icon: <ThumbsUp className="h-8 w-8 text-blue-600" />,
+      icon: <ThumbsUp className="h-8 w-8 text-yellow-600" />,
       title: "Best Price Guarantee",
       description: "We match any competitor price",
-    },
-  ];
-
-  const popularCars = [
-    {
-      name: "Tesla Model 3",
-      price: "$99/day",
-      image: "/api/placeholder/400/300",
-      type: "Electric",
-    },
-    {
-      name: "BMW X5",
-      price: "$129/day",
-      image: "/api/placeholder/400/300",
-      type: "SUV",
-    },
-    {
-      name: "Mercedes C-Class",
-      price: "$89/day",
-      image: "/api/placeholder/400/300",
-      type: "Luxury",
-    },
-    {
-      name: "Toyota Camry",
-      price: "$49/day",
-      image: "/api/placeholder/400/300",
-      type: "Economy",
     },
   ];
 
@@ -199,29 +173,167 @@ export default function Home() {
       </div>
 
       {/* Features Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-36 bg-black/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          {/* Heading */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-yellow-600 mb-4">
               Why Choose DriveRent?
             </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <p className="text-white text-lg max-w-2xl mx-auto">
               We provide the best car rental experience with transparent pricing
               and excellent service
             </p>
-          </div>
+          </motion.div>
 
+          {/* Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition text-center"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -8 }}
+                className="bg-black/60 p-6 text-center transition relative group"
               >
-                <div className="flex justify-center mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
+                {/* Glow effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-yellow-600/10 blur-xl" />
+
+                {/* Icon */}
+                <motion.div
+                  whileHover={{ scale: 1.2, rotate: 5 }}
+                  className="flex justify-center mb-4 text-yellow-500"
+                >
+                  {feature.icon}
+                </motion.div>
+
+                <h3 className="text-xl text-white font-semibold mb-2">
+                  {feature.title}
+                </h3>
+
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  {feature.description}
+                </p>
+              </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* our services section */}
+      <section className="py-24 bg-black/90">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Heading */}
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-yellow-600">
+              OUR SERVICES
+            </h2>
+          </div>
+
+          {/* Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Service 1 */}
+            <div className="group">
+              {/* Image */}
+              <div className="relative w-full h-64 overflow-hidden">
+                <Image
+                  src="/images/carsite5.jpg"
+                  alt="Car Hire Lagos"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition duration-500"
+                />
+                {/* <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition" /> */}
+              </div>
+
+              {/* Content */}
+              <div className="bg-black/60 p-5 space-y-3">
+                <h3 className="text-yellow-600 text-xl font-bold">
+                  CAR HIRE LAGOS
+                </h3>
+                <p className="text-gray-400 text-md md:text-lg leading-relaxed">
+                  Flexible car hire in Lagos services for daily use, business
+                  travel, and personal transportation.
+                </p>
+
+                <Link
+                  href="/cars"
+                  className="inline-flex items-center gap-2 text-yellow-500 font-medium hover:gap-3 transition-all"
+                >
+                  Learn More <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Service 2 */}
+            <div className="group">
+              <div className="relative w-full h-64 overflow-hidden">
+                <Image
+                  src="/images/carsite6.jpg"
+                  alt="Airport Transfers"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition" />
+              </div>
+
+              <div className="bg-black/60 p-5 space-y-3">
+                <h3 className="text-yellow-600 text-xl font-bold">
+                  AIRPORT TRANSFERS
+                </h3>
+                <p className="text-gray-400 text-md md:text-lg leading-relaxed">
+                  Reliable airport pickup and drop-off services with
+                  professional drivers and timely scheduling.
+                </p>
+
+                <Link
+                  href="/cars"
+                  className="inline-flex items-center gap-2 text-yellow-500 font-medium hover:gap-3 transition-all"
+                >
+                  Learn More <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Service 3 */}
+            <div className="group">
+              <div className="relative w-full h-64 overflow-hidden">
+                <Image
+                  src="/images/carsite3.jpg"
+                  alt="Event & Corporate Hire"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition" />
+              </div>
+
+              <div className="bg-black/60 p-5 space-y-3">
+                <h3 className="text-yellow-600 text-xl font-bold">
+                  EVENT & CORPORATE HIRE
+                </h3>
+                <p className="text-gray-400 text-md md:text-lg leading-relaxed">
+                  Premium vehicles for weddings, corporate events, and executive
+                  travel with chauffeur service.
+                </p>
+
+                <Link
+                  href="/cars"
+                  className="inline-flex items-center gap-2 text-yellow-500 font-medium hover:gap-3 transition-all"
+                >
+                  Learn More <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
