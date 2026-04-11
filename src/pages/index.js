@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import Link from "next/link";
 import {
   Shield,
+  MessageCircle,
   HeadphonesIcon,
   Clock,
   ThumbsUp,
@@ -52,8 +53,8 @@ export default function Home() {
       <Hero />
 
       {/*  */}
-      <div className="w-full bg-black/90 text-white px-10 sm:px-20 lg:px-20 py-15 sm:py-18 lg:py-36">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start justify-between gap-6 lg:gap-12 mb-40">
+      <div className="w-full bg-black/90 text-white px-4 sm:px-8 lg:px-15 py-15 sm:py-18 lg:py-36">
+        <div className="max-w-7xl mx-auto flex flex-col sm:px-10 lg:flex-row items-start justify-between gap-6 lg:gap-12 mb-40">
           {/* Left Side - Heading */}
           <h2 className="text-yellow-500 w-full lg:w-1/2 text-lg sm:text-xl lg:text-2xl font-semibold leading-snug">
             RACMAR SOLUTIONS — Reliable Car Hire in Ibadan and Lagos for
@@ -74,7 +75,7 @@ export default function Home() {
         </div>
 
         {/* Car Images Section */}
-        <div className="w-full sm:px-6 lg:px-8">
+        <div className="w-full px-0 sm:px-0 lg:px-8">
           <div className="max-w-7xl mx-auto">
             {/* Swipe Indicator (Mobile Only) */}
             <div className="flex items-center justify-center mb-4 lg:hidden">
@@ -174,7 +175,7 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="py-36 bg-black/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-20 lg:px-8">
           {/* Heading */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -233,32 +234,33 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Heading */}
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-yellow-600">
+            <h2 className="text-2xl md:text-3xl font-bold text-yellow-600 tracking-wide">
               OUR SERVICES
             </h2>
           </div>
 
           {/* Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 sm:px-10 md:px-25 lg:px-8 gap-8">
             {/* Service 1 */}
-            <div className="group">
-              {/* Image */}
+            <div className="group transition duration-300 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(234,179,8,0.15)]">
               <div className="relative w-full h-64 overflow-hidden">
                 <Image
-                  src="/images/carsite5.jpg"
+                  src="/images/ourservices1.jpg"
                   alt="Car Hire Lagos"
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition duration-500"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-110 transition duration-700 ease-out"
                 />
-                {/* <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition" /> */}
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition duration-500" />
               </div>
 
-              {/* Content */}
-              <div className="bg-black/60 p-5 space-y-3">
-                <h3 className="text-yellow-600 text-xl font-bold">
+              <div className="bg-black/60 p-5 space-y-4 relative">
+                <div className="absolute top-0 left-0 w-0 h-[2px] bg-yellow-600 group-hover:w-full transition-all duration-500" />
+
+                <h3 className="text-yellow-600 text-xl font-bold tracking-wide">
                   CAR HIRE LAGOS
                 </h3>
+
                 <p className="text-gray-400 text-md md:text-lg leading-relaxed">
                   Flexible car hire in Lagos services for daily use, business
                   travel, and personal transportation.
@@ -266,30 +268,34 @@ export default function Home() {
 
                 <Link
                   href="/cars"
-                  className="inline-flex items-center gap-2 text-yellow-500 font-medium hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-2 bg-yellow-600 text-gray-900 px-5 py-2.5 text-sm font-semibold hover:bg-yellow-500 transition-all transform hover:scale-105 shadow-md"
                 >
-                  Learn More <ArrowRight className="h-4 w-4" />
+                  View Service
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             </div>
 
             {/* Service 2 */}
-            <div className="group">
+            <div className="group transition duration-300 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(234,179,8,0.15)]">
               <div className="relative w-full h-64 overflow-hidden">
                 <Image
-                  src="/images/carsite6.jpg"
+                  src="/images/ourservices2.jpg"
                   alt="Airport Transfers"
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition duration-500"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-110 transition duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition" />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition duration-500" />
               </div>
 
-              <div className="bg-black/60 p-5 space-y-3">
-                <h3 className="text-yellow-600 text-xl font-bold">
+              <div className="bg-black/60 p-5 space-y-4 relative">
+                <div className="absolute top-0 left-0 w-0 h-[2px] bg-yellow-600 group-hover:w-full transition-all duration-500" />
+
+                <h3 className="text-yellow-600 text-xl font-bold tracking-wide">
                   AIRPORT TRANSFERS
                 </h3>
+
                 <p className="text-gray-400 text-md md:text-lg leading-relaxed">
                   Reliable airport pickup and drop-off services with
                   professional drivers and timely scheduling.
@@ -297,30 +303,34 @@ export default function Home() {
 
                 <Link
                   href="/cars"
-                  className="inline-flex items-center gap-2 text-yellow-500 font-medium hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-2 bg-yellow-600 text-gray-900 px-5 py-2.5 text-sm font-semibold hover:bg-yellow-500 transition-all transform hover:scale-105 shadow-md"
                 >
-                  Learn More <ArrowRight className="h-4 w-4" />
+                  View Service
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             </div>
 
             {/* Service 3 */}
-            <div className="group">
+            <div className="group transition duration-300 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(234,179,8,0.15)]">
               <div className="relative w-full h-64 overflow-hidden">
                 <Image
-                  src="/images/carsite3.jpg"
+                  src="/images/ourservices5.jpg"
                   alt="Event & Corporate Hire"
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition duration-500"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="object-cover group-hover:scale-110 transition duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition" />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition duration-500" />
               </div>
 
-              <div className="bg-black/60 p-5 space-y-3">
-                <h3 className="text-yellow-600 text-xl font-bold">
+              <div className="bg-black/60 p-5 space-y-4 relative">
+                <div className="absolute top-0 left-0 w-0 h-[2px] bg-yellow-600 group-hover:w-full transition-all duration-500" />
+
+                <h3 className="text-yellow-600 text-xl font-bold tracking-wide">
                   EVENT & CORPORATE HIRE
                 </h3>
+
                 <p className="text-gray-400 text-md md:text-lg leading-relaxed">
                   Premium vehicles for weddings, corporate events, and executive
                   travel with chauffeur service.
@@ -328,9 +338,10 @@ export default function Home() {
 
                 <Link
                   href="/cars"
-                  className="inline-flex items-center gap-2 text-yellow-500 font-medium hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-2 bg-yellow-600 text-gray-900 px-5 py-2.5 text-sm font-semibold hover:bg-yellow-500 transition-all transform hover:scale-105 shadow-md"
                 >
-                  Learn More <ArrowRight className="h-4 w-4" />
+                  View Service
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             </div>
@@ -338,25 +349,178 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Amenities Section */}
-      <section className="py-16 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12">
-            Every Rental Includes
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {amenities.map((amenity, index) => (
-              <div key={index} className="flex flex-col items-center gap-3">
-                <div className="text-blue-500">{amenity.icon}</div>
-                <span className="text-lg">{amenity.name}</span>
+      {/*why clients trust*/}
+      <section className="w-full py-20 bg-black text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-20 lg:px-30">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-xl text-yellow-600 sm:text-2xl lg:text-2xl font-bold leading-tight">
+              WHY CLIENTS TRUST RACMAR & HOW OUR SERVICE WORKS
+            </h2>
+          </div>
+
+          {/* Boxes Container */}
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Box 1 */}
+            <div className="flex-1 bg-white/5 backdrop-blur-lg border border-white/10 p-8 lg:p-10 min-h-[500px] flex flex-col justify-between hover:bg-white/10 transition duration-300">
+              <div>
+                <h3 className="text-2xl text-yellow-600 font-semibold mb-4">
+                  TRUSTED CAR HIRE SERVICE IN IBADAN AND LAGOS.
+                </h3>
+                <p className="text-gray-300 mb-6 leading-relaxed">
+                  RACMAR is trusted by executives, residents, and international
+                  visitors for reliable and professional car hire services in
+                  Lagos AND Ibadan.
+                </p>
+
+                <ul className="space-y-4 text-gray-300">
+                  <li>
+                    — 4.9-Star Rated Service — Trusted by hundreds of satisfied
+                    clients
+                  </li>
+                  <li>
+                    — Professional Chauffeurs — Experienced, trained, and
+                    reliable drivers
+                  </li>
+                  <li>
+                    — 24/7 Availability — No extra charges, anytime you need us.
+                  </li>
+                </ul>
               </div>
-            ))}
+            </div>
+
+            {/* Box 2 */}
+            <div className="flex-1 bg-white/5 backdrop-blur-lg border border-white/10 p-8 lg:p-10 min-h-[500px] flex flex-col justify-between hover:bg-white/10 transition duration-300">
+              <div>
+                <h3 className="text-2xl text-yellow-600 font-semibold mb-4">
+                  HOW OUR CAR HIRE SERVICE WORKS.
+                </h3>
+                <p className="text-gray-300 mb-6 leading-relaxed">
+                  Booking your car hire in Lagos with RACMAR is simple, fast,
+                  and designed for your convenience.
+                </p>
+
+                <ul className="space-y-4 text-gray-300">
+                  <li>
+                    — Enter your trip details including date and pickup location
+                  </li>
+                  <li>
+                    — Browse available vehicles and select your preferred option
+                  </li>
+                  <li>
+                    — Confirm your booking, complete payment, and enjoy a
+                    seamless ride
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-12">
+            {/* Text Content */}
+            <div className="text-center lg:text-left">
+              <h2 className="text-2xl md:text-3xl font-bold text-yellow-600 mb-2 tracking-wide">
+                BOOK YOUR CAR HIRE TODAY
+              </h2>
+              <p className="text-white text-sm md:text-base">
+                Fast response • Available 24/7 • No hidden charges
+              </p>
+            </div>
+
+            {/* WhatsApp Button */}
+            <a
+              href="https://wa.me/234XXXXXXXXXX"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-yellow-600 text-black px-6 md:px-8 py-3 md:py-4 font-semibold hover:bg-gray-900 transition-all transform hover:scale-105 shadow-lg"
+            >
+              <MessageCircle className="h-5 w-5 text-black" />
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* faq section */}
+      <section className="py-24 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Heading */}
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-yellow-600 tracking-wide">
+              FREQUENTLY ASKED QUESTIONS
+            </h2>
+            <p className="text-gray-400 mt-3 max-w-2xl mx-auto">
+              Everything you need to know about our car hire services in Lagos
+              and Ibadan
+            </p>
+          </div>
+
+          {/* FAQ Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* FAQ 1 */}
+            <div className="bg-white/5 border border-white/10 p-6 transition duration-300 hover:-translate-y-2 hover:bg-white/10 hover:shadow-[0_0_25px_rgba(234,179,8,0.1)]">
+              <h3 className="text-yellow-600 font-semibold mb-3 tracking-wide">
+                HOW DO I BOOK A CAR?
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                You can book directly through our website or contact us via
+                WhatsApp for fast assistance and confirmation.
+              </p>
+            </div>
+
+            {/* FAQ 2 */}
+            <div className="bg-white/5 border border-white/10 p-6 transition duration-300 hover:-translate-y-2 hover:bg-white/10 hover:shadow-[0_0_25px_rgba(234,179,8,0.1)]">
+              <h3 className="text-yellow-600 font-semibold mb-3 tracking-wide">
+                ARE YOUR SERVICES AVAILABLE 24/7?
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Yes, we operate round the clock to ensure you get reliable
+                transportation whenever you need it.
+              </p>
+            </div>
+
+            {/* FAQ 3 */}
+            <div className="bg-white/5 border border-white/10 p-6 transition duration-300 hover:-translate-y-2 hover:bg-white/10 hover:shadow-[0_0_25px_rgba(234,179,8,0.1)]">
+              <h3 className="text-yellow-600 font-semibold mb-3 tracking-wide">
+                DO YOU PROVIDE DRIVERS?
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Yes, all our car hire services come with professional and
+                experienced chauffeurs for your comfort and safety.
+              </p>
+            </div>
+
+            {/* FAQ 4 */}
+            <div className="bg-white/5 border border-white/10 p-6 transition duration-300 hover:-translate-y-2 hover:bg-white/10 hover:shadow-[0_0_25px_rgba(234,179,8,0.1)]">
+              <h3 className="text-yellow-600 font-semibold mb-3 tracking-wide">
+                ARE THERE ANY HIDDEN CHARGES?
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                No, our pricing is fully transparent with no hidden fees. What
+                you see is exactly what you pay.
+              </p>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="flex justify-center mt-12">
+            <Link
+              href="/faq"
+              className="inline-flex items-center gap-2 bg-yellow-600 text-gray-900 px-6 md:px-8 py-3 md:py-4 font-semibold hover:bg-yellow-500 transition-all transform hover:scale-105 shadow-lg"
+            >
+              View All FAQs
+              <ArrowRight className="h-5 w-5" />
+            </Link>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800">
+      <section className="py-20 bg-black/90">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Hit the Road?
@@ -366,7 +530,7 @@ export default function Home() {
           </p>
           <Link
             href="/booking"
-            className="inline-block bg-yellow-500 text-gray-900 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-yellow-400 transition"
+            className="inline-block bg-yellow-600 text-gray-900 px-8 py-3 font-semibold text-lg hover:bg-yellow-500 transition"
           >
             Book Now
           </Link>
