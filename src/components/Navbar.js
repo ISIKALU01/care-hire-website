@@ -65,7 +65,7 @@ const Navbar = () => {
           {/* CTA */}
           <div className="hidden md:block">
             <Link
-              href="/booking"
+              href="/reserve"
               className="bg-yellow-600 text-white px-5 py-2 rounded-lg text-sm font-medium flex items-center gap-2
               hover:bg-yellow-700 transition-all duration-300 hover:scale-105 shadow-md"
             >
@@ -119,7 +119,7 @@ const Navbar = () => {
             isMobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="py-4 border-t border-white/10 space-y-5 bg-black/80 backdrop-blur-lg">
+          <div className="py-4 border-t border-white/10 space-y-5 bg-black/60 backdrop-blur-lg">
 
             {/* Links */}
             <div className="flex flex-col space-y-4 px-2">
@@ -146,7 +146,7 @@ const Navbar = () => {
 
             {/* CTA */}
             <Link
-              href="/booking"
+              href="/reserve"
               onClick={() => setIsMobileMenuOpen(false)}
               className="block mx-2 bg-yellow-600 text-white px-4 py-2 rounded-lg text-center text-sm font-medium
               hover:bg-yellow-700 transition transform hover:scale-105"

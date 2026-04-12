@@ -247,7 +247,7 @@ export default function Home() {
               <div className="relative w-full h-64 overflow-hidden">
                 <Image
                   src="/images/ourservices1.jpg"
-                  alt="Car Hire Lagos"
+                  alt="Car Hire"
                   fill
                   sizes="(max-width: 1024px) 100vw, 33vw"
                   className="object-cover group-hover:scale-110 transition duration-700 ease-out"
@@ -259,7 +259,7 @@ export default function Home() {
                 <div className="absolute top-0 left-0 w-0 h-[2px] bg-yellow-600 group-hover:w-full transition-all duration-500" />
 
                 <h3 className="text-yellow-600 text-xl font-bold tracking-wide">
-                  CAR HIRE LAGOS
+                  CAR HIRE 
                 </h3>
 
                 <p className="text-gray-400 text-md md:text-lg leading-relaxed">
@@ -268,10 +268,10 @@ export default function Home() {
                 </p>
 
                 <Link
-                  href="/cars"
+                  href="/ourservices"
                   className="inline-flex items-center gap-2 bg-yellow-600 text-gray-900 px-5 py-2.5 text-sm font-semibold hover:bg-yellow-500 transition-all transform hover:scale-105 shadow-md"
                 >
-                  View Service
+                  Learn more
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
@@ -303,10 +303,10 @@ export default function Home() {
                 </p>
 
                 <Link
-                  href="/cars"
+                  href="/ourservices"
                   className="inline-flex items-center gap-2 bg-yellow-600 text-gray-900 px-5 py-2.5 text-sm font-semibold hover:bg-yellow-500 transition-all transform hover:scale-105 shadow-md"
                 >
-                  View Service
+                  Learn more
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
@@ -338,10 +338,10 @@ export default function Home() {
                 </p>
 
                 <Link
-                  href="/cars"
+                  href="/ourservices"
                   className="inline-flex items-center gap-2 bg-yellow-600 text-gray-900 px-5 py-2.5 text-sm font-semibold hover:bg-yellow-500 transition-all transform hover:scale-105 shadow-md"
                 >
-                  View Service
+                  Learn more
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
@@ -440,7 +440,7 @@ export default function Home() {
               className="inline-flex items-center gap-2 bg-yellow-600 text-black px-6 md:px-8 py-3 md:py-4 font-semibold hover:bg-gray-900 transition-all transform hover:scale-105 shadow-lg"
             >
               <FaWhatsapp className="h-5 w-5 text-black" />
-              CHAT ON WhatsApp
+              CHAT ON WHATSAPP
             </a>
           </div>
         </div>
@@ -510,7 +510,7 @@ export default function Home() {
           {/* CTA */}
           <div className="flex justify-center mt-12">
             <Link
-              href="/faq"
+              href="/viewfaqs"
               className="inline-flex items-center gap-2 bg-yellow-600 text-gray-900 px-6 md:px-8 py-3 md:py-4 font-semibold hover:bg-yellow-500 transition-all transform hover:scale-105 shadow-lg"
             >
               View All FAQs
@@ -530,7 +530,7 @@ export default function Home() {
             Book your car today and get 20% off your first rental
           </p>
           <Link
-            href="/booking"
+            href="/reserve"
             className="inline-block bg-yellow-600 text-gray-900 px-8 py-3 font-semibold text-lg hover:bg-yellow-500 transition"
           >
             Book Now

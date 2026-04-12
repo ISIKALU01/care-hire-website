@@ -223,7 +223,8 @@ const Hero = () => {
                     </div>
                   </div>
 
-                  <button className="w-1/2 mx-auto block bg-yellow-600 text-gray-900 px-3 py-2 sm:py-2.5 rounded font-bold hover:bg-yellow-600 transition-all transform hover:scale-[1.02] shadow-lg mt-3 sm:mt-4 text-sm sm:text-base">
+                  <button className="w-1/2 mx-auto block bg-yellow-600 text-gray-900 px-3 py-2 sm:py-2.5 rounded font-bold hover:bg-yellow-600 
+                  transition-all transform hover:scale-[1.02] shadow-lg mt-3 sm:mt-4 text-sm sm:text-base">
                     RESERVE YOUR JOURNEY
                   </button>
                 </div>

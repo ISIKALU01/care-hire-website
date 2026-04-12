@@ -373,7 +373,7 @@ export default function Services() {
                 professionalism. Always on time, and proactive customer
                 check-ins throughout our stay. If you are visiting Lagos and
                 want reliability, professionalism, and peace of mind, I highly
-                recommend TheLuxAuto.
+                recommend RACMAR solutions.
               </p>
 
               <p className="mt-4 text-yellow-600 font-semibold">— Kai Dunna</p>
