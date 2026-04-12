@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Car, Menu, X, Phone } from "lucide-react";
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 const Navbar = () => {
@@ -12,8 +12,8 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "HOME", path: "/" },
-    { name: "OUR FLEET", path: "/cars" },
-    { name: "SERVICES", path: "/services" },
+    { name: "OUR FLEET", path: "/fleet" },
+    { name: "SERVICES", path: "/ourservices" },
     { name: "CONTACT", path: "/contact" },
   ];
 
@@ -102,13 +102,13 @@ const Navbar = () => {
           {/* Contact */}
           <div className="flex items-center gap-6 text-sm text-gray-400">
             <span className="flex items-center text-yellow-600 gap-1 hover:text-white transition">
-              <Phone size={14} /> +234 9122308240
+              <Phone size={14} /> +234 803 412 3844
             </span>
             <span className="flex items-center gap-1 text-yellow-600  hover:text-white transition">
-              <MdEmail size={16} /> info@theluxauto.com
+              <MdEmail size={16} /> info@racmarsolutions.com
             </span>
             <span className="flex items-center gap-1 text-yellow-600  hover:text-white transition">
-              <Phone size={14} /> +234 810 348 4586
+              <FaWhatsapp size={14} /> +234 803 412 3844
             </span>
           </div>
         </div>
@@ -167,13 +167,13 @@ const Navbar = () => {
             {/* Contact */}
             <div className="flex flex-col items-center gap-2 text-sm text-gray-400">
               <span className="flex items-center gap-1">
-                <Phone size={14} /> +234 9122308240
+                <Phone size={14} /> +234 803 412 3844
               </span>
               <span className="flex items-center gap-1">
-                <MdEmail size={16} /> info@theluxauto.com
+                <MdEmail size={16} /> info@racmarsolutions.com
               </span>
               <span className="flex items-center gap-1">
-                <Phone size={14} /> +234 810 348 4586
+                <Phone size={14} /> +234 803 412 3844
               </span>
             </div>
 

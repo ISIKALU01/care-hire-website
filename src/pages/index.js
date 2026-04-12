@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Home() {
   const features = [
@@ -93,7 +94,7 @@ export default function Home() {
               <div className="relative min-w-[85%] sm:min-w-[60%] lg:min-w-0 h-64 sm:h-72 lg:h-80 overflow-hidden group snap-start">
                 <Image
                   src="/images/carsite5.jpg"
-                  alt="Toyota Camry"
+                  alt="Toyota Sienna"
                   fill
                   sizes="(max-width: 640px) 85vw, (max-width: 1024px) 60vw, 33vw"
                   className="object-cover group-hover:scale-105 transition duration-500 ease-in-out"
@@ -101,7 +102,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-0 p-4 w-full">
                   <h3 className="text-white text-lg font-semibold">
-                    Toyota Camry
+                    Toyota Sienna
                   </h3>
                   <p className="text-gray-300 text-sm">
                     Comfortable city rides
@@ -116,7 +117,7 @@ export default function Home() {
               <div className="relative min-w-[85%] sm:min-w-[60%] lg:min-w-0 h-64 sm:h-72 lg:h-80 overflow-hidden group snap-start">
                 <Image
                   src="/images/carsite6.jpg"
-                  alt="Lexus RX 350"
+                  alt="Toyota Corolla"
                   fill
                   sizes="(max-width: 640px) 85vw, (max-width: 1024px) 60vw, 33vw"
                   className="object-cover group-hover:scale-105 transition duration-500 ease-in-out"
@@ -124,7 +125,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-0 p-4 w-full">
                   <h3 className="text-white text-lg font-semibold">
-                    Lexus RX 350
+                    Toyota Corolla
                   </h3>
                   <p className="text-gray-300 text-sm">
                     Luxury & executive travel
@@ -139,7 +140,7 @@ export default function Home() {
               <div className="relative min-w-[85%] sm:min-w-[60%] lg:min-w-0 h-64 sm:h-72 lg:h-80 overflow-hidden group snap-start">
                 <Image
                   src="/images/carsite3.jpg"
-                  alt="Toyota Hiace"
+                  alt="Toyota Camry"
                   fill
                   sizes="(max-width: 640px) 85vw, (max-width: 1024px) 60vw, 33vw"
                   className="object-cover group-hover:scale-105 transition duration-500 ease-in-out"
@@ -147,7 +148,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-0 p-4 w-full">
                   <h3 className="text-white text-lg font-semibold">
-                    Toyota Hiace
+                    Toyota Camry
                   </h3>
                   <p className="text-gray-300 text-sm">
                     Group & event transport
@@ -185,7 +186,7 @@ export default function Home() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-yellow-600 mb-4">
-              Why Choose DriveRent?
+              Why Choose RACMAR?
             </h2>
             <p className="text-white text-lg max-w-2xl mx-auto">
               We provide the best car rental experience with transparent pricing
@@ -438,8 +439,8 @@ export default function Home() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-yellow-600 text-black px-6 md:px-8 py-3 md:py-4 font-semibold hover:bg-gray-900 transition-all transform hover:scale-105 shadow-lg"
             >
-              <MessageCircle className="h-5 w-5 text-black" />
-              Chat on WhatsApp
+              <FaWhatsapp className="h-5 w-5 text-black" />
+              CHAT ON WhatsApp
             </a>
           </div>
         </div>

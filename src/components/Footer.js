@@ -28,10 +28,10 @@ const Footer = () => {
             <Link href="/" className="text-yellow-600 hover:text-yellow-500 transition">
               Home
             </Link>
-            <Link href="/cars" className="text-yellow-600 hover:text-yellow-500 transition">
+            <Link href="/fleet" className="text-yellow-600 hover:text-yellow-500 transition">
               Fleet
             </Link>
-            <Link href="/booking" className="text-yellow-600 hover:text-yellow-500 transition">
+            <Link href="/ourservices" className="text-yellow-600 hover:text-yellow-500 transition">
               Book
             </Link>
             <Link href="/contact" className="text-yellow-600 hover:text-yellow-500 transition">
@@ -43,11 +43,11 @@ const Footer = () => {
           <div className="flex flex-col gap-2 text-sm text-gray-400 items-center lg:items-end">
             <div className="flex items-center gap-2">
               <Phone className="h-4 w-4 text-yellow-600" />
-              <span className="text-white">+234 XXX XXX XXXX</span>
+              <span className="text-white">+234 803 412 3844</span>
             </div>
             <div className="flex items-center gap-2">
               <Mail className="h-4 w-4 text-yellow-600" />
-              <span className="text-white">info@racmar.com</span>
+              <span className="text-white">info@racmarsolutions.com</span>
             </div>
           </div>
 
@@ -55,7 +55,7 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="border-t border-white/10 mt-6 pt-6 text-center text-white text-xs">
-          © {new Date().getFullYear()} RACMAR. All rights reserved.
+          © {new Date().getFullYear()} RACMAR. All rights reserved. Developed by {"ElegantUI "}
         </div>
 
       </div>
