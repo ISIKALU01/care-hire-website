@@ -104,13 +104,14 @@ const Hero = () => {
           {/* Right Form - Takes full height and stays at the edge */}
           <div className="w-full lg:w-1/2 h-full flex items-center">
             <div className="w-full h-full bg-black/20 backdrop-blur-md shadow-2xl flex items-center p-4 sm:p-6 lg:p-8">
-              <div className="w-full max-w-md mx-auto lg:mx-0 lg:ml-auto lg:mr-8 xl:mr-16">
-                <div className="space-y-3 sm:space-y-4">
+              <div className="w-full h-full max-w-md mx-auto lg:mx-0 lg:ml-auto lg:mr-8 xl:mr-16">
+                <div className="space-y-3 sm:space-y-4 pt-10">
                   {/* Pickup Row - Date and Time side by side */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                    <div className="group flex items-stretch bg-white border-white/30 focus-within:border-yellow-500 transition-all h-[52px]">
-                      <div className="bg-yellow-600 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
-                        <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-gray-900" />
+                    <div className="group flex items-stretch bg-white border-white/30 focus-within:border-yellow-500 
+                    transition-all h-[58px]">
+                      <div className="bg-yellow-600 flex items-center justify-center w-12 sm:w-11 flex-shrink-0">
+                        <Calendar className="h-6 w-6 sm:h-5 sm:w-5 text-gray-900" />
                       </div>
                       <div className="flex-1 flex flex-col justify-between">
                         <label className="block text-xs font-medium text-gray-600 px-2 pt-1 pb-0">
@@ -126,10 +127,10 @@ const Hero = () => {
 
                     <div
                       className="group flex items-stretch bg-white border-white/30 focus-within:border-yellow-500 
-                    transition-all mb-4 sm:mb-0"
+                    transition-all mb-4 sm:mb-0 h-[58px]"
                     >
-                      <div className="bg-yellow-600 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
-                        <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-gray-900" />
+                      <div className="bg-yellow-600 flex items-center justify-center w-12 sm:w-11 flex-shrink-0">
+                        <Clock className="h-6 w-6 sm:h-5 sm:w-5 text-gray-900" />
                       </div>
                       <div className="flex-1 flex flex-col justify-between">
                         <label className="block text-xs font-medium text-gray-600 px-2 pt-1 pb-0">
@@ -145,9 +146,9 @@ const Hero = () => {
 
                   {/* Return Row - Date and Time side by side */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                    <div className="group flex items-stretch bg-white border-white/30 focus-within:border-yellow-500 transition-all">
-                      <div className="bg-yellow-600 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
-                        <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-gray-900" />
+                    <div className="group flex items-stretch bg-white border-white/30 h-[58px] focus-within:border-yellow-500 transition-all">
+                      <div className="bg-yellow-600 flex items-center justify-center w-12 sm:w-11 flex-shrink-0">
+                        <Calendar className="h-6 w-6 sm:h-5 sm:w-5 text-gray-900" />
                       </div>
                       <div className="flex-1 flex flex-col justify-between">
                         <label className="block text-xs font-medium text-gray-600 px-2 pt-1 pb-0">
@@ -163,10 +164,10 @@ const Hero = () => {
 
                     <div
                       className="group flex items-stretch bg-white border-white/30 focus-within:border-yellow-500 
-                    transition-all mb-4 sm:mb-0"
+                    transition-all mb-4 sm:mb-0 h-[58px]"
                     >
-                      <div className="bg-yellow-600 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
-                        <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-gray-900" />
+                      <div className="bg-yellow-600 flex items-center justify-center w-12 sm:w-11 flex-shrink-0">
+                        <Clock className="h-6 w-6 sm:h-5 sm:w-5 text-gray-900" />
                       </div>
                       <div className="flex-1 flex flex-col justify-between">
                         <label className="block text-xs font-medium text-gray-600 px-2 pt-1 pb-0">
@@ -181,9 +182,9 @@ const Hero = () => {
                   </div>
 
                   {/* Location Data - below the date/time rows */}
-                  <div className="group flex items-stretch bg-white border-white/30 focus-within:border-yellow-500 transition-all">
-                    <div className="bg-yellow-600 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
-                      <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-gray-900" />
+                  <div className="group flex items-stretch bg-white border-white/30 h-[58px] focus-within:border-yellow-500 transition-all">
+                    <div className="bg-yellow-600 flex items-center justify-center w-12 sm:w-11 flex-shrink-0">
+                      <MapPin className="h-6 w-6 sm:h-5 sm:w-5 text-gray-900" />
                     </div>
                     <div className="flex-1 flex flex-col justify-between">
                       <label className="block text-xs font-medium text-gray-600 px-2 pt-1 pb-0">
@@ -197,9 +198,9 @@ const Hero = () => {
                     </div>
                   </div>
 
-                  <div className="group flex items-stretch bg-white border-white/30 focus-within:border-yellow-500 transition-all">
-                    <div className="bg-yellow-600 flex items-center justify-center w-10 sm:w-11 flex-shrink-0">
-                      <CarIcon className="h-4 w-4 sm:h-5 sm:w-5 text-gray-900" />
+                  <div className="group flex items-stretch bg-white border-white/30 h-[58px] focus-within:border-yellow-500 transition-all">
+                    <div className="bg-yellow-600 flex items-center justify-center w-12 sm:w-11 flex-shrink-0">
+                      <CarIcon className="h-6 w-6 sm:h-5 sm:w-5 text-gray-900" />
                     </div>
                     <div className="flex-1 flex flex-col justify-between">
                       <label className="block text-xs font-medium text-gray-600 px-2 pt-1 pb-0">
@@ -222,7 +223,7 @@ const Hero = () => {
                     </div>
                   </div>
 
-                  <button className="w-1/2 mx-auto block bg-yellow-600 text-gray-900 py-2 sm:py-2.5 rounded font-semibold hover:bg-yellow-600 transition-all transform hover:scale-[1.02] shadow-lg mt-3 sm:mt-4 text-sm sm:text-base">
+                  <button className="w-1/2 mx-auto block bg-yellow-600 text-gray-900 px-3 py-2 sm:py-2.5 rounded font-bold hover:bg-yellow-600 transition-all transform hover:scale-[1.02] shadow-lg mt-3 sm:mt-4 text-sm sm:text-base">
                     RESERVE YOUR JOURNEY
                   </button>
                 </div>
