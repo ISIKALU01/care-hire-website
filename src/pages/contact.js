@@ -40,17 +40,17 @@ export default function Contact() {
 
                 <div className="flex items-center gap-3">
                   <Phone className="text-yellow-600 w-5 h-5" />
-                  <span>+234 XXX XXX XXXX</span>
+                  <span>+234 803 412 3844</span>
                 </div>
 
                 <div className="flex items-center gap-3">
                   <Mail className="text-yellow-600 w-5 h-5" />
-                  <span>info@racmar.com</span>
+                  <span>info@racmarsolutions.com</span>
                 </div>
 
                 <div className="flex items-center gap-3">
                   <MapPin className="text-yellow-600 w-5 h-5" />
-                  <span>Ibadan & Lagos, Nigeria</span>
+                  <span>Beside Jossy Store, Aafin Iyanu, Ologuneru, Ibadan</span>
                 </div>
 
               </div>
@@ -60,7 +60,7 @@ export default function Contact() {
                 href="https://wa.me/234XXXXXXXXXX"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-green-500 text-white px-6 py-3 font-semibold hover:bg-green-600 transition-all transform hover:scale-105"
+                className="inline-flex items-center gap-2 bg-yellow-600 text-black px-6 py-3 font-semibold hover:bg-green-600 transition-all transform hover:scale-105"
               >
                 <FaWhatsapp className="w-5 h-5" />
                 Chat on WhatsApp

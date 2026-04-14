@@ -3,8 +3,14 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Car, Menu, X, Phone } from "lucide-react";
-import { FaFacebookF, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import Image from "next/image";
 
 const Navbar = () => {
   const router = useRouter();
@@ -20,18 +26,20 @@ const Navbar = () => {
   const isActive = (path) => router.pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 bg-black/70 backdrop-blur-xl border-b border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.3)]">
+    <nav className="sticky top-0 z-50 bg-black/90 backdrop-blur-xl border-b border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.3)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* TOP ROW */}
         <div className="flex justify-between items-center h-20 font-raleway">
-
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <Car className="h-8 w-8 text-yellow-600 transition-transform group-hover:scale-110" />
-            <span className="font-bold text-xl text-white tracking-wide">
-              Drive<span className="text-yellow-600">Rent</span>
-            </span>
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/images/racmarlogo.png"
+              alt="DriveRent Logo"
+              width={140}
+              height={40}
+              className="object-contain transition-transform duration-300 group-hover:scale-105"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -44,7 +52,9 @@ const Navbar = () => {
               >
                 <span
                   className={`${
-                    isActive(link.path) ? "text-yellow-600" : "hover:text-yellow-600"
+                    isActive(link.path)
+                      ? "text-yellow-600"
+                      : "hover:text-yellow-600"
                   }`}
                 >
                   {link.name}
@@ -53,9 +63,7 @@ const Navbar = () => {
                 {/* Animated underline */}
                 <span
                   className={`absolute left-0 -bottom-1 h-[2px] bg-yellow-600 transition-all duration-300 ${
-                    isActive(link.path)
-                      ? "w-full"
-                      : "w-0 group-hover:w-full"
+                    isActive(link.path) ? "w-full" : "w-0 group-hover:w-full"
                   }`}
                 ></span>
               </Link>
@@ -77,7 +85,7 @@ const Navbar = () => {
           {/* Mobile Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-white hover:text-yellow-600 transition"
+            className="md:hidden p-2 text-yellow-600 hover:text-yellow-600 transition"
           >
             {isMobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
@@ -85,7 +93,6 @@ const Navbar = () => {
 
         {/* BOTTOM ROW DESKTOP */}
         <div className="hidden md:flex justify-between items-center py-2 border-t border-white/30">
-
           {/* Socials */}
           <div className="flex items-center gap-4">
             {[FaFacebookF, FaInstagram, FaTwitter].map((Icon, i) => (
@@ -120,7 +127,6 @@ const Navbar = () => {
           }`}
         >
           <div className="py-4 border-t border-white/10 space-y-5 bg-black/60 backdrop-blur-lg">
-
             {/* Links */}
             <div className="flex flex-col space-y-4 px-2">
               {navLinks.map((link, i) => (
@@ -176,10 +182,8 @@ const Navbar = () => {
                 <Phone size={14} /> +234 803 412 3844
               </span>
             </div>
-
           </div>
         </div>
-
       </div>
     </nav>
   );

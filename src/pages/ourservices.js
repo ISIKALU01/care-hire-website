@@ -1,5 +1,34 @@
 import Image from "next/image";
 import { Check, User } from "lucide-react";
+import { motion } from "framer-motion";
+
+// Animation Variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 60 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+const fadeInLeft = {
+  hidden: { opacity: 0, x: -80 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8 },
+  },
+};
+
+const fadeInRight = {
+  hidden: { opacity: 0, x: 80 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8 },
+  },
+};
 
 export default function Services() {
   return (
@@ -20,239 +49,179 @@ export default function Services() {
       </section>
 
       {/* SERVICES */}
-      <section className="py-16 space-y-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* 1. Flexible Rentals */}
-        <div className="flex flex-col lg:flex-row items-center gap-10">
-          <div className="relative w-full lg:w-1/2 h-72">
-            <Image
-              src="/images/ourservices11.jpg"
-              alt="Flexible Rentals"
-              fill
-              className="object-cover"
-            />
-          </div>
+      <section className="py-16 space-y-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* 1 */}
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="flex flex-col lg:flex-row items-center gap-10"
+        >
+          <motion.div
+            variants={fadeInLeft}
+            className="relative w-full lg:w-1/2 h-72 overflow-hidden rounded-xl"
+          >
+            <motion.div whileHover={{ scale: 1.08 }} className="w-full h-full">
+              <Image
+                src="/images/ourservices11.jpg"
+                alt="Flexible Rentals"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
+          </motion.div>
 
-          <div className="w-full lg:w-1/2 space-y-4">
+          <motion.div
+            variants={fadeInRight}
+            className="w-full lg:w-1/2 space-y-4"
+          >
             <h2 className="text-2xl text-yellow-600 font-semibold tracking-wide">
               FLEXIBLE RENTALS FOR EVERY JOURNEY
             </h2>
-
             <p className="text-gray-300">
               We provide short-term and long-term car hire options tailored to
-              your schedule. Whether it’s for daily use, business trips, or
-              weekend outings, our vehicles are always ready when you are.
+              your schedule.
             </p>
 
             <ul className="space-y-2 text-gray-400">
-              <li className="flex gap-2">
-                <Check className="w-4 h-4 text-yellow-600" /> Daily, Weekly &
-                Monthly Rentals
-              </li>
-              <li className="flex gap-2">
-                <Check className="w-4 h-4 text-yellow-600" /> Self-drive &
-                Chauffeur options
-              </li>
-              <li className="flex gap-2">
-                <Check className="w-4 h-4 text-yellow-600" /> Clean,
-                well-maintained vehicles
-              </li>
+              {[
+                "Daily, Weekly & Monthly Rentals",
+                "Self-drive & Chauffeur options",
+                "Clean, well-maintained vehicles",
+              ].map((item, i) => (
+                <motion.li
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.2 }}
+                  className="flex gap-2"
+                >
+                  <Check className="w-4 h-4 text-yellow-600" /> {item}
+                </motion.li>
+              ))}
             </ul>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        {/* 2. Executive */}
-        <div className="flex flex-col lg:flex-row-reverse items-center gap-10">
-          <div className="relative w-full lg:w-1/2 h-72">
-            <Image
-              src="/images/ourservices5.jpg"
-              alt="Luxury Rentals"
-              fill
-              className="object-cover"
-            />
-          </div>
+        {/* REUSABLE BLOCK */}
+        {[
+          {
+            title: "EXECUTIVE RENTALS FOR A PREMIUM EXPERIENCE",
+            img: "/images/ourservices5.jpg",
+            reverse: true,
+            content:
+              "Perfect for corporate use, VIP transport, weddings, and special occasions.",
+            list: [
+              "High-end, executive vehicles",
+              "Professional chauffeur service",
+              "Ideal for events and business travel",
+            ],
+          },
+          {
+            title: "AIRPORT PICKUP AND DROP-OFF SERVICES",
+            img: "/images/ourservices2.jpg",
+            reverse: false,
+            content:
+              "Avoid the stress of transportation with our efficient airport services.",
+            list: [
+              "On-time guaranteed service",
+              "Comfortable and secure rides",
+              "Hassle-free experience",
+            ],
+          },
+          {
+            title: "CAR SALES",
+            img: "/images/ourservices12.jpg",
+            reverse: true,
+            content:
+              "We offer carefully inspected and verified vehicles for sale.",
+            list: [
+              "Tested and trusted cars",
+              "Transparent pricing",
+              "Purchase guidance",
+            ],
+          },
+          {
+            title: "CUSTOM HIRE SERVICES",
+            img: "/images/ourservices1.jpg",
+            reverse: false,
+            content:
+              "Flexible and customized car hire solutions tailored to your needs.",
+            list: [
+              "Long-term business rentals",
+              "Event transport planning",
+              "Personalized packages",
+            ],
+          },
+          {
+            title: "PROFESSIONAL CHAUFFEUR SERVICES",
+            img: "/images/ourservices4.jpg",
+            reverse: true,
+            content:
+              "Premium chauffeur-driven transport with highly trained drivers.",
+            list: [
+              "Experienced & licensed chauffeurs",
+              "Punctual and reliable service",
+              "Executive travel experience",
+            ],
+          },
+        ].map((service, index) => (
+          <motion.div
+            key={index}
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className={`flex flex-col ${
+              service.reverse ? "lg:flex-row-reverse" : "lg:flex-row"
+            } items-center gap-10`}
+          >
+            {/* IMAGE */}
+            <motion.div
+              variants={service.reverse ? fadeInRight : fadeInLeft}
+              className="relative w-full lg:w-1/2 h-72 overflow-hidden rounded-xl"
+            >
+              <motion.div
+                whileHover={{ scale: 1.08 }}
+                className="w-full h-full"
+              >
+                <Image
+                  src={service.img}
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
+            </motion.div>
 
-          <div className="w-full lg:w-1/2 space-y-4">
-            <h2 className="text-2xl text-yellow-600 font-semibold tracking-wide">
-              EXECUTIVE RENTALS FOR A PREMIUM EXPERIENCE
-            </h2>
+            {/* TEXT */}
+            <motion.div
+              variants={service.reverse ? fadeInLeft : fadeInRight}
+              className="w-full lg:w-1/2 space-y-4"
+            >
+              <h2 className="text-2xl text-yellow-600 font-semibold tracking-wide">
+                {service.title}
+              </h2>
 
-            <p className="text-gray-300">
-              Perfect for corporate use, VIP transport, weddings, and special
-              occasions. Our luxury vehicles are designed to give you a premium
-              experience wherever you go.
-            </p>
+              <p className="text-gray-300">{service.content}</p>
 
-            <ul className="space-y-2 text-gray-400">
-              <li className="flex gap-2">
-                <Check className="w-4 h-4 text-yellow-600" /> High-end,
-                executive vehicles
-              </li>
-              <li className="flex gap-2">
-                <Check className="w-4 h-4 text-yellow-600" /> Professional
-                chauffeur service
-              </li>
-              <li className="flex gap-2">
-                <Check className="w-4 h-4 text-yellow-600" /> Ideal for events
-                and business travel
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* 3. Airport */}
-        <div className="flex flex-col lg:flex-row items-center gap-10">
-          <div className="relative w-full lg:w-1/2 h-72">
-            <Image
-              src="/images/ourservices2.jpg"
-              alt="Airport Transfer"
-              fill
-              className="object-cover"
-            />
-          </div>
-
-          <div className="w-full lg:w-1/2 space-y-4">
-            <h2 className="text-2xl text-yellow-600 font-semibold tracking-wide">
-              AIRPORT PICKUP AND DROP-OFF SERVICES
-            </h2>
-
-            <p className="text-gray-300">
-              Avoid the stress of transportation with our efficient airport
-              services. We ensure timely pickups and smooth drop-offs, so you
-              can travel with peace of mind.
-            </p>
-
-            <ul className="space-y-2 text-gray-400">
-              <li className="flex gap-2">
-                <Check className="w-4 h-4 text-yellow-600" /> On-time guaranteed
-                service
-              </li>
-              <li className="flex gap-2">
-                <Check className="w-4 h-4 text-yellow-600" /> Comfortable and
-                secure rides
-              </li>
-              <li className="flex gap-2">
-                <Check className="w-4 h-4 text-yellow-600" /> Hassle-free
-                experience
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* 4. Car Sales */}
-        <div className="flex flex-col lg:flex-row-reverse items-center gap-10">
-          <div className="relative w-full lg:w-1/2 h-72">
-            <Image
-              src="/images/ourservices12.jpg"
-              alt="Car Sales"
-              fill
-              className="object-cover"
-            />
-          </div>
-
-          <div className="w-full lg:w-1/2 space-y-4">
-            <h2 className="text-2xl text-yellow-600 font-semibold tracking-wide">
-              CAR SALES
-            </h2>
-
-            <p className="text-gray-300">
-              Looking to own a car? We offer carefully inspected and verified
-              vehicles for sale at competitive prices.
-            </p>
-
-            <ul className="space-y-2 text-gray-400">
-              <li className="flex gap-2">
-                <Check className="w-4 h-4 text-yellow-600" /> Tested and trusted
-                cars
-              </li>
-              <li className="flex gap-2">
-                <Check className="w-4 h-4 text-yellow-600" /> Transparent
-                pricing
-              </li>
-              <li className="flex gap-2">
-                <Check className="w-4 h-4 text-yellow-600" /> Purchase guidance
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* 5. Custom Hire */}
-        <div className="flex flex-col lg:flex-row items-center gap-10">
-          <div className="relative w-full lg:w-1/2 h-72">
-            <Image
-              src="/images/ourservices1.jpg"
-              alt="Custom Hire"
-              fill
-              className="object-cover"
-            />
-          </div>
-
-          <div className="w-full lg:w-1/2 space-y-4">
-            <h2 className="text-2xl text-yellow-600 font-semibold tracking-wide">
-              CUSTOM HIRE SERVICES
-            </h2>
-
-            <p className="text-gray-300">
-              We understand that every customer is different. That’s why we
-              offer flexible and customized car hire solutions to suit your
-              unique needs.
-            </p>
-
-            <ul className="space-y-2 text-gray-400">
-              <li className="flex gap-2">
-                <Check className="w-4 h-4 text-yellow-600" /> Long-term business
-                rentals
-              </li>
-              <li className="flex gap-2">
-                <Check className="w-4 h-4 text-yellow-600" /> Event transport
-                planning
-              </li>
-              <li className="flex gap-2">
-                <Check className="w-4 h-4 text-yellow-600" /> Personalized
-                packages
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* 6. professional chauffeurs */}
-        {/* 6. professional chauffeurs */}
-        <div className="flex flex-col lg:flex-row-reverse items-center gap-10">
-          <div className="relative w-full lg:w-1/2 h-72">
-            <Image
-              src="/images/ourservices4.jpg"
-              alt="Professional Chauffeur Services"
-              fill
-              className="object-cover"
-            />
-          </div>
-
-          <div className="w-full lg:w-1/2 space-y-4">
-            <h2 className="text-2xl text-yellow-600 font-semibold tracking-wide">
-              PROFESSIONAL CHAUFFEUR SERVICES
-            </h2>
-
-            <p className="text-gray-300">
-              Experience premium chauffeur-driven transport with highly trained,
-              courteous, and professional drivers available for business,
-              airport transfers, events, and private travel.
-            </p>
-
-            <ul className="space-y-2 text-gray-400">
-              <li className="flex gap-2">
-                <Check className="w-4 h-4 text-yellow-600" /> Experienced &
-                licensed chauffeurs
-              </li>
-              <li className="flex gap-2">
-                <Check className="w-4 h-4 text-yellow-600" /> Punctual and
-                reliable service
-              </li>
-              <li className="flex gap-2">
-                <Check className="w-4 h-4 text-yellow-600" /> Comfortable,
-                executive travel experience
-              </li>
-            </ul>
-          </div>
-        </div>
+              <ul className="space-y-2 text-gray-400">
+                {service.list.map((item, i) => (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.2 }}
+                    className="flex gap-2"
+                  >
+                    <Check className="w-4 h-4 text-yellow-600" /> {item}
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          </motion.div>
+        ))}
       </section>
 
       {/* AREAS WE SERVE */}

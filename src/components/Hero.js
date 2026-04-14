@@ -66,9 +66,9 @@ const Hero = () => {
           {/* Left Content - Centered in the remaining space */}
           <div className="hidden lg:flex lg:w-1/2 items-center justify-center px-8 xl:px-16">
             <div className="max-w-xl animate-fade-in-left">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              <h1 className="text-xl md:text-3xl lg:text-5xl font-bold leading-tight mb-6">
                 Drive Your Dreams with{" "}
-                <span className="text-yellow-600">Premium Cars</span>
+                <span className="text-yellow-600">Racmar Solutions</span>
               </h1>
               <p className="text-base md:text-lg lg:text-xl text-gray-200 mb-8">
                 Choose from our extensive fleet of luxury, economy, and SUV

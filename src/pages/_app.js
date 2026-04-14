@@ -2,6 +2,7 @@
 import { Raleway } from "next/font/google";
 import "@/styles/globals.css"; // adjust if your path differs
 import Layout from "../components/Layout";
+import BackToTop from "@/components/backtotop";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -15,6 +16,7 @@ export default function App({ Component, pageProps }) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <BackToTop />
     </div>
   );
 }

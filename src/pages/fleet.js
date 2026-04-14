@@ -95,13 +95,6 @@ export default function Fleet() {
                     <span className="text-yellow-400 font-bold text-sm">
                       {car.price}
                     </span>
-
-                    <Link
-                      href="/booking"
-                      className="text-xs bg-yellow-600 text-gray-900 px-3 py-1.5 font-semibold hover:bg-yellow-500 transition"
-                    >
-                      Book Now
-                    </Link>
                   </div>
                 </div>
               </div>
@@ -124,7 +117,7 @@ export default function Fleet() {
           </p>
 
           <Link
-            href="/booking"
+            href="/reserve"
             className="inline-flex items-center gap-2 bg-yellow-600 text-gray-900 px-6 py-3 font-semibold hover:bg-yellow-500 transition-all transform hover:scale-105"
           >
             Book a Ride
