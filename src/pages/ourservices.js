@@ -2,34 +2,6 @@ import Image from "next/image";
 import { Check, User } from "lucide-react";
 import { motion } from "framer-motion";
 
-// Animation Variants
-const fadeInUp = {
-  hidden: { opacity: 0, y: 60 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
-  },
-};
-
-const fadeInLeft = {
-  hidden: { opacity: 0, x: -80 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.8 },
-  },
-};
-
-const fadeInRight = {
-  hidden: { opacity: 0, x: 80 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.8 },
-  },
-};
-
 export default function Services() {
   return (
     <div className="bg-black text-white">
@@ -51,31 +23,19 @@ export default function Services() {
       {/* SERVICES */}
       <section className="py-16 space-y-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* 1 */}
-        <motion.div
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="flex flex-col lg:flex-row items-center gap-10"
-        >
-          <motion.div
-            variants={fadeInLeft}
-            className="relative w-full lg:w-1/2 h-72 overflow-hidden rounded-xl"
-          >
-            <motion.div whileHover={{ scale: 1.08 }} className="w-full h-full">
+        <div className="flex flex-col lg:flex-row items-center gap-10">
+          <div className="relative w-full lg:w-1/2 h-72 overflow-hidden rounded-xl">
+            <div className="w-full h-full">
               <Image
                 src="/images/ourservices11.jpg"
                 alt="Flexible Rentals"
                 fill
                 className="object-cover"
               />
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
-          <motion.div
-            variants={fadeInRight}
-            className="w-full lg:w-1/2 space-y-4"
-          >
+          <div className="w-full lg:w-1/2 space-y-4">
             <h2 className="text-2xl text-yellow-600 font-semibold tracking-wide">
               FLEXIBLE RENTALS FOR EVERY JOURNEY
             </h2>
@@ -90,19 +50,13 @@ export default function Services() {
                 "Self-drive & Chauffeur options",
                 "Clean, well-maintained vehicles",
               ].map((item, i) => (
-                <motion.li
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.2 }}
-                  className="flex gap-2"
-                >
+                <li key={i} className="flex gap-2">
                   <Check className="w-4 h-4 text-yellow-600" /> {item}
-                </motion.li>
+                </li>
               ))}
             </ul>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
         {/* REUSABLE BLOCK */}
         {[
@@ -167,39 +121,26 @@ export default function Services() {
             ],
           },
         ].map((service, index) => (
-          <motion.div
+          <div
             key={index}
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
             className={`flex flex-col ${
               service.reverse ? "lg:flex-row-reverse" : "lg:flex-row"
             } items-center gap-10`}
           >
             {/* IMAGE */}
-            <motion.div
-              variants={service.reverse ? fadeInRight : fadeInLeft}
-              className="relative w-full lg:w-1/2 h-72 overflow-hidden rounded-xl"
-            >
-              <motion.div
-                whileHover={{ scale: 1.08 }}
-                className="w-full h-full"
-              >
+            <div className="relative w-full lg:w-1/2 h-72 overflow-hidden rounded-xl">
+              <div className="w-full h-full">
                 <Image
                   src={service.img}
                   alt={service.title}
                   fill
                   className="object-cover"
                 />
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
 
             {/* TEXT */}
-            <motion.div
-              variants={service.reverse ? fadeInLeft : fadeInRight}
-              className="w-full lg:w-1/2 space-y-4"
-            >
+            <div className="w-full lg:w-1/2 space-y-4">
               <h2 className="text-2xl text-yellow-600 font-semibold tracking-wide">
                 {service.title}
               </h2>
@@ -208,19 +149,13 @@ export default function Services() {
 
               <ul className="space-y-2 text-gray-400">
                 {service.list.map((item, i) => (
-                  <motion.li
-                    key={i}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.2 }}
-                    className="flex gap-2"
-                  >
+                  <li key={i} className="flex gap-2">
                     <Check className="w-4 h-4 text-yellow-600" /> {item}
-                  </motion.li>
+                  </li>
                 ))}
               </ul>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         ))}
       </section>
 
