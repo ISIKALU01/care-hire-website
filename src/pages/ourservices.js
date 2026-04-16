@@ -196,7 +196,7 @@ export default function Services() {
                   We provide chauffeur-driven transportation from Ibadan and
                   Lagos to destinations across the Southwest and other parts of
                   Nigeria, including:Abeokuta, Sagamu, Benin City, Ilorin,
-                  Akure, Oshogbo, Ondo, Warri, Asaba... and more on request.
+                  Owerri, Oshogbo, Ebonyi, Warri, Asaba, Calabar... and more on request.
                 </p>
               </div>
             </div>

@@ -247,8 +247,8 @@ export default function Home() {
                 </h3>
 
                 <p className="text-gray-400 text-md md:text-lg leading-relaxed">
-                  Flexible car hire in Lagos services for daily use, business
-                  travel, and personal transportation.
+                  Flexible car hire services for daily use, business
+                  travel, and personal transportation accross Nigeria.
                 </p>
 
                 <Link

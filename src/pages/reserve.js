@@ -1,9 +1,82 @@
 import Image from "next/image";
-import { Calendar, Clock, MapPin, Car as CarIcon } from "lucide-react";
+import {
+  Calendar,
+  Clock,
+  MapPin,
+  Car as CarIcon,
+  Phone,
+  CheckCircle,
+} from "lucide-react";
+import { useState } from "react";
 
 const BookPage = () => {
+  const [formData, setFormData] = useState({
+    pickupDate: "",
+    pickupTime: "",
+    returnDate: "",
+    returnTime: "",
+    location: "",
+    carType: "",
+    phoneNumber: "", // ✅ NEW FIELD
+  });
+
+  const [success, setSuccess] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formURL =
+      "https://docs.google.com/forms/d/e/1FAIpQLSeFuGry0M7_aX0lSHZNz6zD0G7ivvAySb17IfovOs54vxvM_g/formResponse";
+
+    const formBody = new FormData();
+
+    formBody.append("entry.1358463684", formData.pickupDate);
+    formBody.append("entry.2117360501", formData.pickupTime);
+    formBody.append("entry.1365613852", formData.returnDate);
+    formBody.append("entry.1936374746", formData.returnTime);
+    formBody.append("entry.2111940346", formData.location);
+    formBody.append("entry.1454574233", formData.carType);
+    formBody.append("entry.1319272363", formData.phoneNumber); // ✅ NEW MAPPING
+
+    await fetch(formURL, {
+      method: "POST",
+      mode: "no-cors",
+      body: formBody,
+    });
+
+    setSuccess(true);
+
+    setTimeout(() => {
+      setSuccess(false);
+    }, 4000);
+  };
+
   return (
-    <section className="w-full bg-black">
+    <section className="w-full bg-black relative">
+      {/* SUCCESS TOAST */}
+      {success && (
+        <div className="fixed top-6 right-6 z-50 animate-fadeIn">
+          <div className="bg-black border border-yellow-600 shadow-2xl rounded-xl px-5 py-4 flex items-center gap-3 w-[300px]">
+            <CheckCircle className="text-yellow-600" />
+            <div>
+              <p className="text-yellow-500 font-semibold text-sm">
+                Booking Confirmed
+              </p>
+              <p className="text-gray-300 text-xs">
+                Your reservation has been submitted successfully.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* HERO IMAGE */}
       <div className="relative w-full h-[60vh] flex items-center justify-center">
         <Image
@@ -13,11 +86,7 @@ const BookPage = () => {
           className="object-cover"
           priority
         />
-
-        {/* DARK OVERLAY */}
         <div className="absolute inset-0 bg-black/60" />
-
-        {/* TITLE */}
         <h1 className="relative z-10 text-4xl md:text-6xl font-semibold text-yellow-600 tracking-wide">
           RESERVATIONS
         </h1>
@@ -25,162 +94,173 @@ const BookPage = () => {
 
       {/* FORM SECTION */}
       <div className="max-w-5xl mx-auto px-6 py-16">
-        <div className="bg-white/5 border border-white/10 rounded-2xl shadow-2xl backdrop-blur-xl p-6 sm:p-10">
-          <div className="space-y-6">
-            {/* GRID */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {/* Pickup Date */}
+        <form onSubmit={handleSubmit}>
+          <div className="bg-white/5 border border-white/10 rounded-2xl shadow-2xl backdrop-blur-xl p-6 sm:p-10">
+            <div className="space-y-6">
+              {/* GRID */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* Pickup Date */}
+                <div className="flex bg-white h-[58px] rounded overflow-hidden">
+                  <div className="bg-yellow-600 flex items-center justify-center w-12">
+                    <Calendar className="h-5 w-5 text-black" />
+                  </div>
+                  <div className="flex-1 flex flex-col justify-center px-2">
+                    <label className="text-xs text-gray-600">
+                      Pickup Date
+                    </label>
+                    <input
+                      type="date"
+                      name="pickupDate"
+                      onChange={handleChange}
+                      className="outline-none text-gray-900 text-sm"
+                    />
+                  </div>
+                </div>
+
+                {/* Pickup Time */}
+                <div className="flex bg-white h-[58px] rounded overflow-hidden">
+                  <div className="bg-yellow-600 flex items-center justify-center w-12">
+                    <Clock className="h-5 w-5 text-black" />
+                  </div>
+                  <div className="flex-1 flex flex-col justify-center px-2">
+                    <label className="text-xs text-gray-600">
+                      Pickup Time
+                    </label>
+                    <input
+                      type="time"
+                      name="pickupTime"
+                      onChange={handleChange}
+                      className="outline-none text-gray-900 text-sm"
+                    />
+                  </div>
+                </div>
+
+                {/* Return Date */}
+                <div className="flex bg-white h-[58px] rounded overflow-hidden">
+                  <div className="bg-yellow-600 flex items-center justify-center w-12">
+                    <Calendar className="h-5 w-5 text-black" />
+                  </div>
+                  <div className="flex-1 flex flex-col justify-center px-2">
+                    <label className="text-xs text-gray-600">
+                      Return Date
+                    </label>
+                    <input
+                      type="date"
+                      name="returnDate"
+                      onChange={handleChange}
+                      className="outline-none text-gray-900 text-sm"
+                    />
+                  </div>
+                </div>
+
+                {/* Return Time */}
+                <div className="flex bg-white h-[58px] rounded overflow-hidden">
+                  <div className="bg-yellow-600 flex items-center justify-center w-12">
+                    <Clock className="h-5 w-5 text-black" />
+                  </div>
+                  <div className="flex-1 flex flex-col justify-center px-2">
+                    <label className="text-xs text-gray-600">
+                      Return Time
+                    </label>
+                    <input
+                      type="time"
+                      name="returnTime"
+                      onChange={handleChange}
+                      className="outline-none text-gray-900 text-sm"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* LOCATION */}
               <div className="flex bg-white h-[58px] rounded overflow-hidden">
                 <div className="bg-yellow-600 flex items-center justify-center w-12">
-                  <Calendar className="h-5 w-5 text-black" />
+                  <MapPin className="h-5 w-5 text-black" />
                 </div>
                 <div className="flex-1 flex flex-col justify-center px-2">
-                  <label className="text-xs text-gray-600">Pickup Date</label>
+                  <label className="text-xs text-gray-600">
+                    Pickup Location
+                  </label>
                   <input
-                    type="date"
+                    type="text"
+                    name="location"
+                    onChange={handleChange}
+                    placeholder="Enter pickup location"
                     className="outline-none text-gray-900 text-sm"
                   />
                 </div>
               </div>
 
-              {/* Pickup Time */}
+              {/* PHONE NUMBER (NEW) */}
               <div className="flex bg-white h-[58px] rounded overflow-hidden">
                 <div className="bg-yellow-600 flex items-center justify-center w-12">
-                  <Clock className="h-5 w-5 text-black" />
+                  <Phone className="h-5 w-5 text-black" />
                 </div>
                 <div className="flex-1 flex flex-col justify-center px-2">
-                  <label className="text-xs text-gray-600">Pickup Time</label>
+                  <label className="text-xs text-gray-600">
+                    Phone Number
+                  </label>
                   <input
-                    type="time"
+                    type="tel"
+                    name="phoneNumber"
+                    onChange={handleChange}
+                    placeholder="Provide phone number you can be reached on"
                     className="outline-none text-gray-900 text-sm"
                   />
                 </div>
               </div>
 
-              {/* Return Date */}
+              {/* CAR TYPE */}
               <div className="flex bg-white h-[58px] rounded overflow-hidden">
                 <div className="bg-yellow-600 flex items-center justify-center w-12">
-                  <Calendar className="h-5 w-5 text-black" />
+                  <CarIcon className="h-5 w-5 text-black" />
                 </div>
                 <div className="flex-1 flex flex-col justify-center px-2">
-                  <label className="text-xs text-gray-600">Return Date</label>
-                  <input
-                    type="date"
-                    className="outline-none text-gray-900 text-sm"
-                  />
+                  <label className="text-xs text-gray-600">Car Type</label>
+                  <select
+                    name="carType"
+                    onChange={handleChange}
+                    className="outline-none text-gray-900 text-sm bg-white"
+                  >
+                    <option>Select Car Type</option>
+                    <option>Economy</option>
+                    <option>Luxury</option>
+                    <option>SUV</option>
+                    <option>Van</option>
+                    <option>Bus</option>
+                  </select>
                 </div>
               </div>
 
-              {/* Return Time */}
-              <div className="flex bg-white h-[58px] rounded overflow-hidden">
-                <div className="bg-yellow-600 flex items-center justify-center w-12">
-                  <Clock className="h-5 w-5 text-black" />
-                </div>
-                <div className="flex-1 flex flex-col justify-center px-2">
-                  <label className="text-xs text-gray-600">Return Time</label>
-                  <input
-                    type="time"
-                    className="outline-none text-gray-900 text-sm"
-                  />
-                </div>
-              </div>
+              {/* BUTTON */}
+              <button
+                type="submit"
+                className="w-full bg-yellow-600 text-black font-bold py-3 rounded-lg hover:bg-yellow-500 transition-all transform hover:scale-[1.02] shadow-lg"
+              >
+                RESERVE YOUR JOURNEY
+              </button>
             </div>
-
-            {/* LOCATION */}
-            <div className="flex bg-white h-[58px] rounded overflow-hidden">
-              <div className="bg-yellow-600 flex items-center justify-center w-12">
-                <MapPin className="h-5 w-5 text-black" />
-              </div>
-              <div className="flex-1 flex flex-col justify-center px-2">
-                <label className="text-xs text-gray-600">Pickup Location</label>
-                <input
-                  type="text"
-                  placeholder="Enter pickup location"
-                  className="outline-none text-gray-900 text-sm"
-                />
-              </div>
-            </div>
-
-            {/* CAR TYPE */}
-            <div className="flex bg-white h-[58px] rounded overflow-hidden">
-              <div className="bg-yellow-600 flex items-center justify-center w-12">
-                <CarIcon className="h-5 w-5 text-black" />
-              </div>
-              <div className="flex-1 flex flex-col justify-center px-2">
-                <label className="text-xs text-gray-600">Car Type</label>
-                <select className="outline-none text-gray-900 text-sm bg-white">
-                  <option>Select Car Type</option>
-                  <option>Economy</option>
-                  <option>Luxury</option>
-                  <option>SUV</option>
-                  <option>Van</option>
-                  <option>Bus</option>
-                </select>
-              </div>
-            </div>
-
-            {/* BUTTON */}
-            <button className="w-full bg-yellow-600 text-black font-bold py-3 rounded-lg hover:bg-yellow-500 transition-all transform hover:scale-[1.02] shadow-lg">
-              RESERVE YOUR JOURNEY
-            </button>
           </div>
-        </div>
+        </form>
       </div>
 
-      {/* SERVICE INFORMATION */}
-      <div className="mt-16">
-        <div className="bg-gradient-to-b from-white/5 to-white/0 border border-white/10 rounded-2xl p-6 sm:p-8 lg:p-10 shadow-xl">
-          {/* Header */}
-          <div className="mb-8 text-center lg:text-left">
-            <h3 className="text-2xl md:text-3xl font-bold text-yellow-600 tracking-wide">
-              PLEASE NOTE, THE FOLLOWING CONDITIONS
-            </h3>
-            <p className="text-gray-400 mt-2 text-sm md:text-base max-w-2xl">
-              Please review the details below to ensure a smooth and seamless
-              booking experience.
-            </p>
-          </div>
+      {/* ANIMATION */}
+      <style jsx>{`
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease-out;
+        }
 
-          {/* Content */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            {/* Fuel Policy */}
-            <div className="space-y-3">
-              <h4 className="text-lg md:text-xl font-medium text-white">
-                Fuel Policy
-              </h4>
-
-              <p className="text-gray-400 leading-relaxed text-sm md:text-base">
-                Fuel is not included in the base rental price. Vehicles are
-                provided without fuel, and clients are responsible for fueling
-                throughout the duration of their trip.
-              </p>
-
-              <p className="text-gray-500 text-sm md:text-base">
-                For added convenience, a pre-fueling option can be arranged upon
-                request.
-              </p>
-            </div>
-
-            {/* Pickup & Drop-off */}
-            <div className="space-y-3">
-              <h4 className="text-lg md:text-xl font-medium text-white">
-                Pickup & Drop-off Service
-              </h4>
-
-              <p className="text-gray-400 leading-relaxed text-sm md:text-base">
-                For point-to-point transfers, select your preferred pickup time
-                and set the return time approximately three hours later during
-                booking.
-              </p>
-
-              <p className="text-gray-500 text-sm md:text-base">
-                This service is designed for direct travel between locations
-                without intermediate stops, ensuring efficiency and comfort.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </section>
   );
 };

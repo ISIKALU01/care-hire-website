@@ -4,33 +4,48 @@ import { ArrowRight } from "lucide-react";
 
 const cars = [
   {
-    name: "Toyota Camry",
+    name: "Toyota Prado",
     image: "/images/carsite1.jpg",
     desc: "Comfortable city rides",
   },
   {
-    name: "Lexus RX 350",
+    name: "Lexus SUV",
     image: "/images/carsite2.jpg",
     desc: "Luxury & executive travel",
   },
   {
-    name: "Toyota Hiace",
+    name: "Toyota Camry",
     image: "/images/carsite3.jpg",
     desc: "Group & event transport",
   },
   {
-    name: "Mercedes Benz",
+    name: "Toyota Camry",
     image: "/images/carsite4.jpg",
     desc: "Premium comfort experience",
   },
   {
-    name: "Toyota Prado",
+    name: "Toyota Sienna",
     image: "/images/carsite5.jpg",
     desc: "SUV for long-distance travel",
   },
   {
-    name: "Honda Accord",
+    name: "Toyota Corolla",
     image: "/images/carsite6.jpg",
+    desc: "Affordable executive rides",
+  },
+  {
+    name: "Toyota Camry",
+    image: "/images/fleet11.jpg",
+    desc: "Premium comfort experience",
+  },
+  {
+    name: "HUMMER H2",
+    image: "/images/fleet12.jpg",
+    desc: "SUV for long-distance travel",
+  },
+  {
+    name: "HIACE bus",
+    image: "/images/fleet3.jpg",
     desc: "Affordable executive rides",
   },
 ];
