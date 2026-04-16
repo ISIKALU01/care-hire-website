@@ -4,7 +4,6 @@ import Hero from "../components/Hero";
 import Link from "next/link";
 import {
   Shield,
-  MessageCircle,
   HeadphonesIcon,
   Clock,
   ThumbsUp,
@@ -42,12 +41,6 @@ export default function Home() {
     },
   ];
 
-  const amenities = [
-    { icon: <Wifi />, name: "Free WiFi" },
-    { icon: <Fuel />, name: "Full Tank" },
-    { icon: <Snowflake />, name: "Air Conditioning" },
-    { icon: <Car />, name: "GPS Available" },
-  ];
 
   return (
     <>
@@ -81,7 +74,7 @@ export default function Home() {
             {/* Swipe Indicator (Mobile Only) */}
             <div className="flex items-center justify-center mb-4 lg:hidden">
               <div className="flex items-center gap-2 text-gray-400 text-xs animate-pulse">
-                <span>Swipe</span>
+                <span></span>
                 <div className="w-6 h-[2px] bg-gray-400 relative overflow-hidden">
                   <span className="absolute left-0 top-0 h-full w-2 bg-yellow-500 animate-[slide_1.2s_infinite]" />
                 </div>
@@ -105,10 +98,7 @@ export default function Home() {
                     Toyota Sienna
                   </h3>
                   <p className="text-gray-300 text-sm">
-                    Comfortable city rides
-                  </p>
-                  <p className="text-yellow-400 font-bold text-sm mt-1">
-                    ₦45,000/day
+                    Group & event transport
                   </p>
                 </div>
               </div>
@@ -128,10 +118,7 @@ export default function Home() {
                     Toyota Corolla
                   </h3>
                   <p className="text-gray-300 text-sm">
-                    Luxury & executive travel
-                  </p>
-                  <p className="text-yellow-400 font-bold text-sm mt-1">
-                    ₦85,000/day
+                    Executive travel
                   </p>
                 </div>
               </div>
@@ -151,10 +138,7 @@ export default function Home() {
                     Toyota Camry
                   </h3>
                   <p className="text-gray-300 text-sm">
-                    Group & event transport
-                  </p>
-                  <p className="text-yellow-400 font-bold text-sm mt-1">
-                    ₦120,000/day
+                    Comfortable city rides
                   </p>
                 </div>
               </div>
@@ -434,7 +418,7 @@ export default function Home() {
 
             {/* WhatsApp Button */}
             <a
-              href="https://wa.me/234XXXXXXXXXX"
+              href="https://wa.me/2348034123844"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-yellow-600 text-black px-6 md:px-8 py-3 md:py-4 font-semibold hover:bg-gray-900 transition-all transform hover:scale-105 shadow-lg"

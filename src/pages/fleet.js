@@ -7,37 +7,31 @@ const cars = [
     name: "Toyota Camry",
     image: "/images/carsite1.jpg",
     desc: "Comfortable city rides",
-    price: "₦45,000/day",
   },
   {
     name: "Lexus RX 350",
     image: "/images/carsite2.jpg",
     desc: "Luxury & executive travel",
-    price: "₦85,000/day",
   },
   {
     name: "Toyota Hiace",
     image: "/images/carsite3.jpg",
     desc: "Group & event transport",
-    price: "₦120,000/day",
   },
   {
     name: "Mercedes Benz",
     image: "/images/carsite4.jpg",
     desc: "Premium comfort experience",
-    price: "₦150,000/day",
   },
   {
     name: "Toyota Prado",
     image: "/images/carsite5.jpg",
     desc: "SUV for long-distance travel",
-    price: "₦130,000/day",
   },
   {
     name: "Honda Accord",
     image: "/images/carsite6.jpg",
     desc: "Affordable executive rides",
-    price: "₦55,000/day",
   },
 ];
 
