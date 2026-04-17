@@ -56,7 +56,7 @@ const Hero = () => {
             <div className="max-w-xl animate-fade-in-left text-center lg:text-left">
               <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight mb-6">
                 Drive Your Dreams with{" "}
-                <span className="text-yellow-600">RACMAR Solutions</span>
+                <span className="text-yellow-600">RACMAR</span>
               </h1>
 
               <p className="text-base md:text-lg lg:text-xl text-gray-200 mb-8">
