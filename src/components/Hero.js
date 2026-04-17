@@ -81,7 +81,7 @@ const Hero = () => {
               </div>
 
               <Link
-                href="/cars"
+                href="/fleet"
                 className="inline-flex items-center gap-2 bg-yellow-600 text-gray-900 px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold hover:bg-yellow-600 transition-all transform hover:scale-105 shadow-lg"
               >
                 View Our Fleet
