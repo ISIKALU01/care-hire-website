@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Car, Menu, X, Phone } from "lucide-react";
+import {Menu, X, Phone } from "lucide-react";
 import {
   FaFacebookF,
   FaInstagram,
@@ -74,10 +74,9 @@ const Navbar = () => {
           <div className="hidden md:block">
             <Link
               href="/reserve"
-              className="bg-yellow-600 text-white px-5 py-2 rounded-lg text-sm font-medium flex items-center gap-2
+              className="bg-yellow-600 text-black px-5 py-2 text-sm font-medium flex items-center gap-2
               hover:bg-yellow-700 transition-all duration-300 hover:scale-105 shadow-md"
             >
-              <Phone className="h-4 w-4" />
               Book Now
             </Link>
           </div>

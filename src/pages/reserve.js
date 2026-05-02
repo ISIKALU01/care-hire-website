@@ -17,10 +17,11 @@ const BookPage = () => {
     returnTime: "",
     location: "",
     carType: "",
-    phoneNumber: "", // ✅ NEW FIELD
+    phoneNumber: "",
   });
 
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -31,6 +32,7 @@ const BookPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     const formURL =
       "https://docs.google.com/forms/d/e/1FAIpQLSeFuGry0M7_aX0lSHZNz6zD0G7ivvAySb17IfovOs54vxvM_g/formResponse";
@@ -43,19 +45,34 @@ const BookPage = () => {
     formBody.append("entry.1936374746", formData.returnTime);
     formBody.append("entry.2111940346", formData.location);
     formBody.append("entry.1454574233", formData.carType);
-    formBody.append("entry.1319272363", formData.phoneNumber); // ✅ NEW MAPPING
+    formBody.append("entry.1319272363", formData.phoneNumber);
 
-    await fetch(formURL, {
-      method: "POST",
-      mode: "no-cors",
-      body: formBody,
-    });
+    try {
+      await fetch(formURL, {
+        method: "POST",
+        mode: "no-cors",
+        body: formBody,
+      });
 
-    setSuccess(true);
+      setSuccess(true);
 
-    setTimeout(() => {
-      setSuccess(false);
-    }, 4000);
+      // Reset form
+      setFormData({
+        pickupDate: "",
+        pickupTime: "",
+        returnDate: "",
+        returnTime: "",
+        location: "",
+        carType: "",
+        phoneNumber: "",
+      });
+
+      setTimeout(() => setSuccess(false), 4000);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -77,7 +94,7 @@ const BookPage = () => {
         </div>
       )}
 
-      {/* HERO IMAGE */}
+      {/* HERO */}
       <div className="relative w-full h-[60vh] flex items-center justify-center">
         <Image
           src="/images/pagecar.jpg"
@@ -92,152 +109,106 @@ const BookPage = () => {
         </h1>
       </div>
 
-      {/* FORM SECTION */}
+      {/* FORM */}
       <div className="max-w-5xl mx-auto px-6 py-16">
         <form onSubmit={handleSubmit}>
-          <div className="bg-white/5 border border-white/10 rounded-2xl shadow-2xl backdrop-blur-xl p-6 sm:p-10">
+          <div className="bg-white/5 border border-white/10 shadow-2xl backdrop-blur-xl p-6 sm:p-10">
             <div className="space-y-6">
               {/* GRID */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Pickup Date */}
-                <div className="flex bg-white h-[58px] rounded overflow-hidden">
-                  <div className="bg-yellow-600 flex items-center justify-center w-12">
-                    <Calendar className="h-5 w-5 text-black" />
-                  </div>
-                  <div className="flex-1 flex flex-col justify-center px-2">
-                    <label className="text-xs text-gray-600">
-                      Pickup Date
-                    </label>
-                    <input
-                      type="date"
-                      name="pickupDate"
-                      onChange={handleChange}
-                      className="outline-none text-gray-900 text-sm"
-                    />
-                  </div>
-                </div>
+                <InputBox icon={<Calendar />} label="Pickup Date">
+                  <input
+                    type="date"
+                    name="pickupDate"
+                    value={formData.pickupDate}
+                    onChange={handleChange}
+                    className="w-full outline-none text-gray-900 text-sm bg-transparent"
+                  />
+                </InputBox>
 
                 {/* Pickup Time */}
-                <div className="flex bg-white h-[58px] rounded overflow-hidden">
-                  <div className="bg-yellow-600 flex items-center justify-center w-12">
-                    <Clock className="h-5 w-5 text-black" />
-                  </div>
-                  <div className="flex-1 flex flex-col justify-center px-2">
-                    <label className="text-xs text-gray-600">
-                      Pickup Time
-                    </label>
-                    <input
-                      type="time"
-                      name="pickupTime"
-                      onChange={handleChange}
-                      className="outline-none text-gray-900 text-sm"
-                    />
-                  </div>
-                </div>
+                <InputBox icon={<Clock />} label="Pickup Time">
+                  <input
+                    type="time"
+                    name="pickupTime"
+                    value={formData.pickupTime}
+                    onChange={handleChange}
+                    className="w-full outline-none text-gray-900 text-sm bg-transparent"
+                  />
+                </InputBox>
 
                 {/* Return Date */}
-                <div className="flex bg-white h-[58px] rounded overflow-hidden">
-                  <div className="bg-yellow-600 flex items-center justify-center w-12">
-                    <Calendar className="h-5 w-5 text-black" />
-                  </div>
-                  <div className="flex-1 flex flex-col justify-center px-2">
-                    <label className="text-xs text-gray-600">
-                      Return Date
-                    </label>
-                    <input
-                      type="date"
-                      name="returnDate"
-                      onChange={handleChange}
-                      className="outline-none text-gray-900 text-sm"
-                    />
-                  </div>
-                </div>
+                <InputBox icon={<Calendar />} label="Return Date">
+                  <input
+                    type="date"
+                    name="returnDate"
+                    value={formData.returnDate}
+                    onChange={handleChange}
+                    className="w-full outline-none text-gray-900 text-sm bg-transparent"
+                  />
+                </InputBox>
 
                 {/* Return Time */}
-                <div className="flex bg-white h-[58px] rounded overflow-hidden">
-                  <div className="bg-yellow-600 flex items-center justify-center w-12">
-                    <Clock className="h-5 w-5 text-black" />
-                  </div>
-                  <div className="flex-1 flex flex-col justify-center px-2">
-                    <label className="text-xs text-gray-600">
-                      Return Time
-                    </label>
-                    <input
-                      type="time"
-                      name="returnTime"
-                      onChange={handleChange}
-                      className="outline-none text-gray-900 text-sm"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* LOCATION */}
-              <div className="flex bg-white h-[58px] rounded overflow-hidden">
-                <div className="bg-yellow-600 flex items-center justify-center w-12">
-                  <MapPin className="h-5 w-5 text-black" />
-                </div>
-                <div className="flex-1 flex flex-col justify-center px-2">
-                  <label className="text-xs text-gray-600">
-                    Pickup Location
-                  </label>
+                <InputBox icon={<Clock />} label="Return Time">
                   <input
-                    type="text"
-                    name="location"
+                    type="time"
+                    name="returnTime"
+                    value={formData.returnTime}
                     onChange={handleChange}
-                    placeholder="Enter pickup location"
-                    className="outline-none text-gray-900 text-sm"
+                    className="w-full outline-none text-gray-900 text-sm bg-transparent"
                   />
-                </div>
+                </InputBox>
               </div>
 
-              {/* PHONE NUMBER (NEW) */}
-              <div className="flex bg-white h-[58px] rounded overflow-hidden">
-                <div className="bg-yellow-600 flex items-center justify-center w-12">
-                  <Phone className="h-5 w-5 text-black" />
-                </div>
-                <div className="flex-1 flex flex-col justify-center px-2">
-                  <label className="text-xs text-gray-600">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    name="phoneNumber"
-                    onChange={handleChange}
-                    placeholder="Provide phone number you can be reached on"
-                    className="outline-none text-gray-900 text-sm"
-                  />
-                </div>
-              </div>
+              {/* Location */}
+              <InputBox icon={<MapPin />} label="Pickup Location">
+                <input
+                  type="text"
+                  name="location"
+                  value={formData.location}
+                  onChange={handleChange}
+                  placeholder="Enter pickup location"
+                  className="w-full outline-none text-gray-900 text-sm bg-transparent"
+                />
+              </InputBox>
 
-              {/* CAR TYPE */}
-              <div className="flex bg-white h-[58px] rounded overflow-hidden">
-                <div className="bg-yellow-600 flex items-center justify-center w-12">
-                  <CarIcon className="h-5 w-5 text-black" />
-                </div>
-                <div className="flex-1 flex flex-col justify-center px-2">
-                  <label className="text-xs text-gray-600">Car Type</label>
-                  <select
-                    name="carType"
-                    onChange={handleChange}
-                    className="outline-none text-gray-900 text-sm bg-white"
-                  >
-                    <option>Select Car Type</option>
-                    <option>Economy</option>
-                    <option>Luxury</option>
-                    <option>SUV</option>
-                    <option>Van</option>
-                    <option>Bus</option>
-                  </select>
-                </div>
-              </div>
+              {/* Phone */}
+              <InputBox icon={<Phone />} label="Phone Number">
+                <input
+                  type="tel"
+                  name="phoneNumber"
+                  value={formData.phoneNumber}
+                  onChange={handleChange}
+                  placeholder="Provide reachable phone number"
+                  className="w-full outline-none text-gray-900 text-sm bg-transparent"
+                />
+              </InputBox>
+
+              {/* Car Type */}
+              <InputBox icon={<CarIcon />} label="Car Type">
+                <select
+                  name="carType"
+                  value={formData.carType}
+                  onChange={handleChange}
+                  className="w-full outline-none text-gray-900 text-sm bg-transparent"
+                >
+                  <option value="">Select Car Type</option>
+                  <option>Economy</option>
+                  <option>Luxury</option>
+                  <option>SUV</option>
+                  <option>Van</option>
+                  <option>Bus</option>
+                </select>
+              </InputBox>
 
               {/* BUTTON */}
               <button
                 type="submit"
-                className="w-full bg-yellow-600 text-black font-bold py-3 rounded-lg hover:bg-yellow-500 transition-all transform hover:scale-[1.02] shadow-lg"
+                disabled={loading}
+                className="w-full sm:w-auto mx-auto block bg-yellow-600 text-black font-semibold px-6 py-2.5 rounded-md hover:bg-yellow-500 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                RESERVE YOUR JOURNEY
+                {loading ? "Processing..." : "Reserve Now"}
               </button>
             </div>
           </div>
@@ -249,7 +220,6 @@ const BookPage = () => {
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-out;
         }
-
         @keyframes fadeIn {
           from {
             opacity: 0;
@@ -264,5 +234,21 @@ const BookPage = () => {
     </section>
   );
 };
+
+/* ✅ REUSABLE INPUT COMPONENT */
+const InputBox = ({ icon, label, children }) => (
+  <div className="flex items-stretch bg-white min-h-[64px] overflow-hidden">
+    {/* ICON SIDE */}
+    <div className="bg-yellow-600 flex items-center justify-center w-12 self-stretch text-black">
+      {icon}
+    </div>
+
+    {/* INPUT SIDE */}
+    <div className="flex-1 px-3 py-2 flex flex-col justify-center">
+      <label className="text-[11px] text-gray-500 leading-tight">{label}</label>
+      {children}
+    </div>
+  </div>
+);
 
 export default BookPage;

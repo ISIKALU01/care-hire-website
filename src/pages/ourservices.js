@@ -119,6 +119,18 @@ export default function Services() {
               "Executive travel experience",
             ],
           },
+          {
+            title: "DRIVER OUTSOURCING SERVICES",
+            img: "/images/ourservices3.jpg", // add a suitable image in your public/images
+            reverse: false,
+            content:
+              "Hire professional, vetted drivers for your personal or business needs without the hassle of recruitment.",
+            list: [
+              "Trained & background-checked drivers",
+              "Flexible short-term & long-term placement",
+              "Perfect for companies and private clients",
+            ],
+          },
         ].map((service, index) => (
           <div
             key={index}
@@ -196,7 +208,8 @@ export default function Services() {
                   We provide chauffeur-driven transportation from Ibadan and
                   Lagos to destinations across the Southwest and other parts of
                   Nigeria, including:Abeokuta, Sagamu, Benin City, Ilorin,
-                  Owerri, Oshogbo, Ebonyi, Warri, Asaba, Calabar... and more on request.
+                  Owerri, Oshogbo, Ebonyi, Warri, Asaba, Calabar... and more on
+                  request.
                 </p>
               </div>
             </div>
