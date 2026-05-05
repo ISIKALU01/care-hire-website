@@ -14,28 +14,28 @@ const cars = [
     desc: "Luxury & executive travel",
   },
   {
-    name: "Toyota Camry",
-    image: "/images/carsite3.jpg",
+    name: "Acura MDX",
+    image: "/images/acura.jpeg",
     desc: "Group & event transport",
   },
   {
     name: "Toyota Camry",
-    image: "/images/carsite4.jpg",
+    image: "/images/camry.jpeg",
     desc: "Premium comfort experience",
   },
   {
     name: "Toyota Sienna",
-    image: "/images/carsite5.jpg",
+    image: "/images/sienna.jpeg",
     desc: "SUV for long-distance travel",
   },
   {
-    name: "Toyota Corolla",
-    image: "/images/carsite6.jpg",
+    name: "Toyota Highlander",
+    image: "/images/highlander.jpeg",
     desc: "Affordable executive rides",
   },
   {
-    name: "Toyota Camry",
-    image: "/images/fleet11.jpg",
+    name: "Pontiac Vibe",
+    image: "/images/vibe.jpeg",
     desc: "Premium comfort experience",
   },
   {
@@ -47,6 +47,21 @@ const cars = [
     name: "HIACE bus",
     image: "/images/fleet3.jpg",
     desc: "Affordable executive rides",
+  },
+  {
+    name: "Toyota Camry",
+    image: "/images/daddy.jpeg",
+    desc: "Affordable executive rides",
+  },
+  {
+    name: "BMW 5 Series",
+    image: "/images/wcar4.jpeg",
+    desc: "Affordable executive rides",
+  },
+  {
+    name: "Mercedes-Benz GLE",
+    image: "/images/wcar78.jpg",
+    desc: "Affordable Premium rides",
   },
 ];
 

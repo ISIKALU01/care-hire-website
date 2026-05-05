@@ -86,7 +86,7 @@ export default function Home() {
               {/* Card 1 */}
               <div className="relative min-w-[85%] sm:min-w-[60%] lg:min-w-0 h-64 sm:h-72 lg:h-80 overflow-hidden group snap-start">
                 <Image
-                  src="/images/carsite5.jpg"
+                  src="/images/acura.jpeg"
                   alt="Toyota Sienna"
                   fill
                   sizes="(max-width: 640px) 85vw, (max-width: 1024px) 60vw, 33vw"
@@ -95,7 +95,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-0 p-4 w-full">
                   <h3 className="text-white text-lg font-semibold">
-                    Toyota Sienna
+                    Acura MDX
                   </h3>
                   <p className="text-gray-300 text-sm">
                     Group & event transport
@@ -106,8 +106,8 @@ export default function Home() {
               {/* Card 2 */}
               <div className="relative min-w-[85%] sm:min-w-[60%] lg:min-w-0 h-64 sm:h-72 lg:h-80 overflow-hidden group snap-start">
                 <Image
-                  src="/images/carsite6.jpg"
-                  alt="Toyota Corolla"
+                  src="/images/camry.jpeg"
+                  alt="Toyota Camry"
                   fill
                   sizes="(max-width: 640px) 85vw, (max-width: 1024px) 60vw, 33vw"
                   className="object-cover group-hover:scale-105 transition duration-500 ease-in-out"
@@ -115,7 +115,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-0 p-4 w-full">
                   <h3 className="text-white text-lg font-semibold">
-                    Toyota Corolla
+                    Toyota Camry
                   </h3>
                   <p className="text-gray-300 text-sm">
                     Executive travel
@@ -126,8 +126,8 @@ export default function Home() {
               {/* Card 3 */}
               <div className="relative min-w-[85%] sm:min-w-[60%] lg:min-w-0 h-64 sm:h-72 lg:h-80 overflow-hidden group snap-start">
                 <Image
-                  src="/images/carsite3.jpg"
-                  alt="Toyota Camry"
+                  src="/images/vibe.jpeg"
+                  alt="Pontiac Vibe"
                   fill
                   sizes="(max-width: 640px) 85vw, (max-width: 1024px) 60vw, 33vw"
                   className="object-cover group-hover:scale-105 transition duration-500 ease-in-out"
@@ -135,7 +135,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-0 p-4 w-full">
                   <h3 className="text-white text-lg font-semibold">
-                    Toyota Camry
+                    Pontiac Vibe
                   </h3>
                   <p className="text-gray-300 text-sm">
                     Comfortable city rides

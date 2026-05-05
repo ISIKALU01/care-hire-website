@@ -26,7 +26,7 @@ export default function Services() {
           <div className="relative w-full lg:w-1/2 h-72 overflow-hidden rounded-xl">
             <div className="w-full h-full">
               <Image
-                src="/images/ourservices11.jpg"
+                src="/images/wcar4.jpeg"
                 alt="Flexible Rentals"
                 fill
                 className="object-cover"
@@ -85,7 +85,7 @@ export default function Services() {
           },
           {
             title: "CAR SALES",
-            img: "/images/ourservices12.jpg",
+            img: "/images/wcar2.jpeg",
             reverse: true,
             content:
               "We offer carefully inspected and verified vehicles for sale.",
@@ -109,7 +109,7 @@ export default function Services() {
           },
           {
             title: "PROFESSIONAL CHAUFFEUR SERVICES",
-            img: "/images/ourservices4.jpg",
+            img: "/images/wcar3.jpg",
             reverse: true,
             content:
               "Premium chauffeur-driven transport with highly trained drivers.",
@@ -121,7 +121,7 @@ export default function Services() {
           },
           {
             title: "DRIVER OUTSOURCING SERVICES",
-            img: "/images/ourservices3.jpg", // add a suitable image in your public/images
+            img: "/images/ourservices4.jpg", // add a suitable image in your public/images
             reverse: false,
             content:
               "Hire professional, vetted drivers for your personal or business needs without the hassle of recruitment.",

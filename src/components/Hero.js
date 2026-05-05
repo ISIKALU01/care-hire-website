@@ -14,10 +14,10 @@ const Hero = () => {
   const today = new Date().toISOString().split("T")[0];
 
   const slides = [
-    { id: 1, image: "/images/hero1.jpg" },
-    { id: 2, image: "/images/hero2.jpg" },
-    { id: 3, image: "/images/hero3.jpg" },
-    { id: 4, image: "/images/hero4.jpg" },
+    { id: 1, image: "/images/orig1.jpeg" },
+    { id: 2, image: "/images/wcar77.jpg" },
+    { id: 3, image: "/images/wcar5.jpeg" },
+    { id: 4, image: "/images/wcar6.jpg" },
   ];
 
   useEffect(() => {
