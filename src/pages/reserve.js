@@ -97,7 +97,7 @@ const BookPage = () => {
       {/* HERO */}
       <div className="relative w-full h-[60vh] flex items-center justify-center">
         <Image
-          src="/images/pagecar.jpg"
+          src="/images/pagecar_converted.avif"
           alt="Luxury Chauffeur Booking"
           fill
           className="object-cover"

@@ -26,9 +26,13 @@ export default function Services() {
           <div className="relative w-full lg:w-1/2 h-72 overflow-hidden rounded-xl">
             <div className="w-full h-full">
               <Image
-                src="/images/wcar4.jpeg"
+                src="/images/wcar4_converted.avif"
                 alt="Flexible Rentals"
                 fill
+                quality={75}
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="/images/placeholder.png"
                 className="object-cover"
               />
             </div>
@@ -61,7 +65,7 @@ export default function Services() {
         {[
           {
             title: "EXECUTIVE RENTALS FOR A PREMIUM EXPERIENCE",
-            img: "/images/ourservices5.jpg",
+            img: "/images/ourservices5_converted.avif",
             reverse: true,
             content:
               "Perfect for corporate use, VIP transport, weddings, and special occasions.",
@@ -73,7 +77,7 @@ export default function Services() {
           },
           {
             title: "AIRPORT PICKUP AND DROP-OFF SERVICES",
-            img: "/images/ourservices2.jpg",
+            img: "/images/ourservices2_converted.avif",
             reverse: false,
             content:
               "Avoid the stress of transportation with our efficient airport services.",
@@ -85,7 +89,7 @@ export default function Services() {
           },
           {
             title: "CAR SALES",
-            img: "/images/wcar2.jpeg",
+            img: "/images/wcar2_converted.avif",
             reverse: true,
             content:
               "We offer carefully inspected and verified vehicles for sale.",
@@ -97,7 +101,7 @@ export default function Services() {
           },
           {
             title: "CUSTOM HIRE SERVICES",
-            img: "/images/ourservices1.jpg",
+            img: "/images/ourservices1_converted.avif",
             reverse: false,
             content:
               "Flexible and customized car hire solutions tailored to your needs.",
@@ -109,7 +113,7 @@ export default function Services() {
           },
           {
             title: "PROFESSIONAL CHAUFFEUR SERVICES",
-            img: "/images/wcar3.jpg",
+            img: "/images/wcar3_converted.avif",
             reverse: true,
             content:
               "Premium chauffeur-driven transport with highly trained drivers.",
@@ -121,7 +125,7 @@ export default function Services() {
           },
           {
             title: "DRIVER OUTSOURCING SERVICES",
-            img: "/images/ourservices4.jpg", // add a suitable image in your public/images
+            img: "/images/ourservices4_converted.avif", // add a suitable image in your public/images
             reverse: false,
             content:
               "Hire professional, vetted drivers for your personal or business needs without the hassle of recruitment.",
@@ -145,6 +149,10 @@ export default function Services() {
                   src={service.img}
                   alt={service.title}
                   fill
+                  quality={75}
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL="/images/placeholder.png"
                   className="object-cover"
                 />
               </div>
@@ -218,9 +226,13 @@ export default function Services() {
             <div className="w-full lg:w-1/2">
               <div className="relative w-full h-[400px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
                 <Image
-                  src="/images/lagosroad1.jpg"
+                  src="/images/lagosroad1_converted.avif"
                   alt="Areas We Serve - Chauffeur Coverage Map"
                   fill
+                  quality={75}
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL="/images/placeholder.png"
                   className="object-cover"
                 />
               </div>

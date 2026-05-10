@@ -5,62 +5,62 @@ import { ArrowRight } from "lucide-react";
 const cars = [
   {
     name: "Toyota Prado",
-    image: "/images/carsite1.jpg",
+    image: "/images/carsite1_converted.avif",
     desc: "Comfortable city rides",
   },
   {
     name: "Lexus SUV",
-    image: "/images/carsite2.jpg",
+    image: "/images/carsite2_converted.avif",
     desc: "Luxury & executive travel",
   },
   {
     name: "Acura MDX",
-    image: "/images/acura.jpeg",
+    image: "/images/acura_converted.avif",
     desc: "Group & event transport",
   },
   {
     name: "Toyota Camry",
-    image: "/images/camry.jpeg",
+    image: "/images/camry_converted.avif",
     desc: "Premium comfort experience",
   },
   {
     name: "Toyota Sienna",
-    image: "/images/sienna.jpeg",
+    image: "/images/sienna_converted.avif",
     desc: "SUV for long-distance travel",
   },
   {
     name: "Toyota Highlander",
-    image: "/images/highlander.jpeg",
+    image: "/images/highlander_converted.avif",
     desc: "Affordable executive rides",
   },
   {
     name: "Pontiac Vibe",
-    image: "/images/vibe.jpeg",
+    image: "/images/vibe_converted.avif",
     desc: "Premium comfort experience",
   },
   {
     name: "HUMMER H2",
-    image: "/images/fleet12.jpg",
+    image: "/images/fleet12_converted.avif",
     desc: "SUV for long-distance travel",
   },
   {
     name: "HIACE bus",
-    image: "/images/fleet3.jpg",
+    image: "/images/fleet3_converted.avif",
     desc: "Affordable executive rides",
   },
   {
     name: "Toyota Camry",
-    image: "/images/daddy.jpeg",
+    image: "/images/daddy_converted.avif",
     desc: "Affordable executive rides",
   },
   {
     name: "BMW 5 Series",
-    image: "/images/wcar4.jpeg",
+    image: "/images/wcar4_converted.avif",
     desc: "Affordable executive rides",
   },
   {
     name: "Mercedes-Benz GLE",
-    image: "/images/wcar78.jpg",
+    image: "/images/wcar78_converted.avif",
     desc: "Affordable Premium rides",
   },
 ];
@@ -101,6 +101,10 @@ export default function Fleet() {
                     alt={car.name}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    quality={75}
+                    loading="lazy"
+                    placeholder="blur"
+                    blurDataURL="/images/placeholder.png"
                     className="object-cover group-hover:scale-110 transition duration-700 ease-out"
                   />
 

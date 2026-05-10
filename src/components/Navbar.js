@@ -33,7 +33,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <Image
-              src="/images/racmarlogo.png"
+              src="/images/racmarlogo_converted.avif"
               alt="DriveRent Logo"
               width={140}
               height={40}

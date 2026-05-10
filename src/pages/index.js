@@ -86,10 +86,14 @@ export default function Home() {
               {/* Card 1 */}
               <div className="relative min-w-[85%] sm:min-w-[60%] lg:min-w-0 h-64 sm:h-72 lg:h-80 overflow-hidden group snap-start">
                 <Image
-                  src="/images/acura.jpeg"
+                  src="/images/acura_converted.avif"
                   alt="Toyota Sienna"
                   fill
                   sizes="(max-width: 640px) 85vw, (max-width: 1024px) 60vw, 33vw"
+                  quality={75}
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL="/images/placeholder.png"
                   className="object-cover group-hover:scale-105 transition duration-500 ease-in-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -106,10 +110,14 @@ export default function Home() {
               {/* Card 2 */}
               <div className="relative min-w-[85%] sm:min-w-[60%] lg:min-w-0 h-64 sm:h-72 lg:h-80 overflow-hidden group snap-start">
                 <Image
-                  src="/images/camry.jpeg"
+                  src="/images/camry_converted.avif"
                   alt="Toyota Camry"
                   fill
                   sizes="(max-width: 640px) 85vw, (max-width: 1024px) 60vw, 33vw"
+                  quality={75}
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL="/images/placeholder.png"
                   className="object-cover group-hover:scale-105 transition duration-500 ease-in-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -126,10 +134,14 @@ export default function Home() {
               {/* Card 3 */}
               <div className="relative min-w-[85%] sm:min-w-[60%] lg:min-w-0 h-64 sm:h-72 lg:h-80 overflow-hidden group snap-start">
                 <Image
-                  src="/images/vibe.jpeg"
+                  src="/images/vibe_converted.avif"
                   alt="Pontiac Vibe"
                   fill
                   sizes="(max-width: 640px) 85vw, (max-width: 1024px) 60vw, 33vw"
+                  quality={75}
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL="/images/placeholder.png"
                   className="object-cover group-hover:scale-105 transition duration-500 ease-in-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -230,10 +242,14 @@ export default function Home() {
             <div className="group transition duration-300 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(234,179,8,0.15)]">
               <div className="relative w-full h-64 overflow-hidden">
                 <Image
-                  src="/images/ourservices1.jpg"
+                  src="/images/ourservices1_converted.avif"
                   alt="Car Hire"
                   fill
                   sizes="(max-width: 1024px) 100vw, 33vw"
+                  quality={75}
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL="/images/placeholder.png"
                   className="object-cover group-hover:scale-110 transition duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition duration-500" />
@@ -265,10 +281,14 @@ export default function Home() {
             <div className="group transition duration-300 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(234,179,8,0.15)]">
               <div className="relative w-full h-64 overflow-hidden">
                 <Image
-                  src="/images/ourservices2.jpg"
+                  src="/images/ourservices2_converted.avif"
                   alt="Airport Transfers"
                   fill
                   sizes="(max-width: 1024px) 100vw, 33vw"
+                  quality={75}
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL="/images/placeholder.png"
                   className="object-cover group-hover:scale-110 transition duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition duration-500" />
@@ -300,10 +320,14 @@ export default function Home() {
             <div className="group transition duration-300 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(234,179,8,0.15)]">
               <div className="relative w-full h-64 overflow-hidden">
                 <Image
-                  src="/images/ourservices5.jpg"
+                  src="/images/ourservices5_converted.avif"
                   alt="Event & Corporate Hire"
                   fill
                   sizes="(max-width: 1024px) 100vw, 33vw"
+                  quality={75}
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL="/images/placeholder.png"
                   className="object-cover group-hover:scale-110 transition duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition duration-500" />
